@@ -1,5 +1,8 @@
 /**
  * Creates a new texture.
+ * @class Core.IgeTexture
+ * @alternateClassName IgeTexture
+ * @extends IgeEventingClass
  */
 var IgeTexture = IgeEventingClass.extend({
 	classId: 'IgeTexture',
@@ -7,7 +10,7 @@ var IgeTexture = IgeEventingClass.extend({
 
 	/**
 	 * Constructor for a new IgeTexture.
-	 * @param {String, Object} urlOrObject Either a string URL that
+	 * @param {String/Object} urlOrObject Either a string URL that
 	 * points to the path of the image or script you wish to use as
 	 * the texture image, or an object containing a smart texture.
 	 * @return {*}
@@ -349,7 +352,7 @@ var IgeTexture = IgeEventingClass.extend({
 	/**
 	 * Creates a new texture from a cell in the existing texture
 	 * and returns the new texture.
-	 * @param {Number, String} indexOrId The cell index or id to use.
+	 * @param {Number/String} indexOrId The cell index or id to use.
 	 * @return {*}
 	 */
 	textureFromCell: function (indexOrId) {
@@ -373,7 +376,7 @@ var IgeTexture = IgeEventingClass.extend({
 	 * Called by textureFromCell() when the texture is ready
 	 * to be processed. See textureFromCell() for description.
 	 * @param {IgeTexture} tex The new texture to paint to.
-	 * @param {Number, String} indexOrId The cell index or id
+	 * @param {Number/String} indexOrId The cell index or id
 	 * to use.
 	 * @private
 	 */

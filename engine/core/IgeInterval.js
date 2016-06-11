@@ -1,7 +1,10 @@
 /**
  * Provides an alternative to setInterval() which works based on the engine's internal
  * time system allowing intervals to fire correctly, taking into account pausing the
- * game and differences in rendering speed etc. 
+ * game and differences in rendering speed etc.
+ * @class Core.IgeInterval
+ * @alternateClassName IgeInterval
+ * @extends IgeEventingClass
  */
 var IgeInterval = IgeEventingClass.extend({
 	classId: 'IgeInterval',

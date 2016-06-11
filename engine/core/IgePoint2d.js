@@ -1,5 +1,8 @@
 /**
  * Creates a new 2d point (x, y).
+ * @class Core.IgePoint2d
+ * @alternateClassName IgePoint2d
+ * @extends IgeClass
  */
 var IgePoint2d = IgeClass.extend({
 	classId: 'IgePoint2d',

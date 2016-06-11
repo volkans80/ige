@@ -1,5 +1,8 @@
 /**
  * Loads slightly modified Tiled-format json map data into the Isogenic Engine.
+ * @class Components.IgeTiledComponent
+ * @alternateClassName IgeTiledComponent
+ * @extends IgeClass
  */
 var IgeTiledComponent = IgeClass.extend({
 	classId: 'IgeTiledComponent',

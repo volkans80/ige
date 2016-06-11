@@ -1,3 +1,9 @@
+/**
+ * There is no description yet
+ * @class Components.Audio.IgeAudio
+ * @alternateClassName IgeAudio
+ * @extends IgeEventingClass
+ */
 var IgeAudio = IgeEventingClass.extend({
 	classId: 'IgeAudio',
 	

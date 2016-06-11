@@ -1,6 +1,9 @@
 // TODO: Implement the _stringify() method for this class
 /**
  * Texture maps provide a way to display textures / cells across a tile map.
+ * @class Core.IgeTextureMap
+ * @alternateClassName IgeTextureMap
+ * @extends IgeTileMap2d
  */
 var IgeTextureMap = IgeTileMap2d.extend({
 	classId: 'IgeTextureMap',
@@ -89,7 +92,7 @@ var IgeTextureMap = IgeTileMap2d.extend({
 	 * data will be something like [[textureId, textureCell]]
 	 * or a real world example: [[0, 1], [1, 1]].
 	 * @param {IgeTexture} texture
-	 * @return {Integer} The index of the texture you just added.
+	 * @return {Number} The index of the texture you just added.
 	 */
 	addTexture: function (texture) {
 		this._textureList.push(texture);
@@ -583,8 +586,8 @@ var IgeTextureMap = IgeTileMap2d.extend({
 	 * @param {Object} tileData The tile's texture and cell data.
 	 * @param {Object} tileEntity The object that represents the tile.
 	 * @param {IgeRect=} rect The rectangular area to limit drawing to.
-	 * @param {Number} sectionX The x co-ordinate of the section to draw to.
-	 * @param {Number} sectionY The y co-ordinate of the section to draw to.
+	 * @param {Number=} sectionX The x co-ordinate of the section to draw to.
+	 * @param {Number=} sectionY The y co-ordinate of the section to draw to.
 	 * @return {*}
 	 * @private
 	 */

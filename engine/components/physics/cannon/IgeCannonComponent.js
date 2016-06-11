@@ -1,3 +1,9 @@
+/**
+ * There is no description yet
+ * @class Components.Physics.Cannon.IgeCannonComponent
+ * @alternateClassName IgeCannonComponent
+ * @extends IgeEventingClass
+ */
 var IgeCannonComponent = IgeEventingClass.extend({
 	classId: 'IgeCannonComponent',
 	componentId: 'cannon',

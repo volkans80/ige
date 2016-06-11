@@ -2,6 +2,9 @@
  * Tile maps provide a way to align mounted child objects to a tile-based grid.
  * NOTE: These are not to be confused with IgeTextureMap's which allow you to
  * paint a bunch of tiles to a grid.
+ * @class Core.IgeTileMap2d
+ * @alternateClassName IgeTileMap2d
+ * @extends IgeEntity
  */
 var IgeTileMap2d = IgeEntity.extend({
 	classId: 'IgeTileMap2d',

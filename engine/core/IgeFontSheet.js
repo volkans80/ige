@@ -8,6 +8,9 @@
  * letters and numbers rendered to specifications. It allows you to
  * use and render text fonts without the font actually existing on
  * the target system that the engine is running in.
+ * @class Core.IgeFontSheet
+ * @alternateClassName IgeFontSheet
+ * @extends IgeTexture
  */
 var IgeFontSheet = IgeTexture.extend({
 	classId: 'IgeFontSheet',

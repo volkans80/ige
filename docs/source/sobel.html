@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>The source code</title>
+  <link href="../resources/prettify/prettify.css" type="text/css" rel="stylesheet" />
+  <script type="text/javascript" src="../resources/prettify/prettify.js"></script>
+  <style type="text/css">
+    .highlight { display: block; background-color: #ddd; }
+  </style>
+  <script type="text/javascript">
+    function highlight() {
+      document.getElementById(location.hash.replace(/#/, "")).className = "highlight";
+    }
+  </script>
+</head>
+<body onload="prettyPrint(); highlight();">
+  <pre class="prettyprint lang-js"><span id='Core-IgeFilters-method-sobel'>/**
+</span> * @member Core.IgeFilters
+ * @param canvas
+ * @param ctx
+ * @param originalImage
+ * @param texture
+ * @param data
+ */
+IgeFilters.sobel = function (canvas, ctx, originalImage, texture, data) {
+	var strength = 1,
+		loop;
+
+	if (data &amp;&amp; data.value) {
+		strength = data.value;
+	}
+
+	for (loop = 0; loop &lt; strength; loop++) {
+		// Apply the filter and then put the new pixel data
+		ctx.putImageData(
+			IgeFilters._convolute(
+				ctx.getImageData(
+					0,
+					0,
+					canvas.width,
+					canvas.height
+				),
+				[
+					-1, -1,  1,
+					-2,  0, 2,
+					-1, 1,  1
+				],
+				true
+			),
+			0,
+			0
+		);
+	}
+
+	//IgeFilters._invert(canvas, ctx);
+};
+
+<span id='Core-IgeFilters-method-_invert'>/**
+</span> * @member Core.IgeFilters
+ * @param canvas
+ * @param ctx
+ * @private
+ */
+IgeFilters._invert = function (canvas, ctx) {
+	var w, h, canvasData, i;
+	w = canvas.width;
+	h = canvas.height;
+
+	canvasData = ctx.getImageData(0, 0, w, h);
+
+	for (i = 0; i &lt; w * h * 4; i += 4)  {
+		canvasData.data[i] = 255 - canvasData.data[i];
+		canvasData.data[i+1] = 255 - canvasData.data[i+1];
+		canvasData.data[i+2] = 255 - canvasData.data[i+2];
+	}
+
+	ctx.putImageData(canvasData, 0, 0);
+};</pre>
+</body>
+</html>

@@ -1,5 +1,8 @@
 /**
  * Texture maps provide a way to display textures across a tile map.
+ * @class Core.IgeTextureAtlas
+ * @alternateClassName IgeTextureAtlas
+ * @extends IgeTextureMap
  */
 var IgeTextureAtlas = IgeTextureMap.extend({
 	classId: 'IgeTextureAtlas',
@@ -11,7 +14,7 @@ var IgeTextureAtlas = IgeTextureMap.extend({
 	/**
 	 * Get / set the data source that the atlas system will use
 	 * to retrieve new map data when required.
-	 * @param {String, Object} ds The url of the data source API
+	 * @param {String/Object} ds The url of the data source API
 	 * endpoint or the actual map data object.
 	 * @return {*}
 	 */

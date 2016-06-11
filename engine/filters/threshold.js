@@ -1,3 +1,11 @@
+/**
+ * @member Core.IgeFilters
+ * @param canvas
+ * @param ctx
+ * @param originalImage
+ * @param texture
+ * @param data
+ */
 IgeFilters.threshold = function (canvas, ctx, originalImage, texture, data) {
 	// Apply the filter and then put the new pixel data
 	ctx.putImageData(
@@ -16,6 +24,14 @@ IgeFilters.threshold = function (canvas, ctx, originalImage, texture, data) {
 	);
 };
 
+/**
+ * @member Core.IgeFilters
+ * @param imageData
+ * @param texture
+ * @param data
+ * @returns {*}
+ * @private
+ */
 IgeFilters._threshold = function (imageData, texture, data) {
 	var arr,
 		arrCount,

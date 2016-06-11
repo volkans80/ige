@@ -1,6 +1,8 @@
 /**
  * The client-side chat component. Handles all client-side
  * chat methods and events.
+ * @class Components.Chat.IgeChatClient
+ * @alternateClassName IgeChatClient
  */
 var IgeChatClient = {
 	/**

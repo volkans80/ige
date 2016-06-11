@@ -3,6 +3,9 @@
  * Creates a new UI entity. UI entities use more resources and CPU
  * than standard IgeEntity instances so only use them if an IgeEntity
  * won't do the job.
+ * @class Core.IgeUiEntity
+ * @alternateClassName IgeUiEntity
+ * @extends IgeEntity
  */
 var IgeUiEntity = IgeEntity.extend([
 	{extension: IgeUiStyleExtension, overwrite: true},

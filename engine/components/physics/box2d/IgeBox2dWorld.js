@@ -1,3 +1,9 @@
+/**
+ * There is no description yet
+ * @class Components.Physics.Box2d.IgeBox2dWorld
+ * @alternateClassName IgeBox2dWorld
+ * @extends IgeEventingClass
+ */
 var IgeBox2dWorld = IgeEventingClass.extend({
 	classId: 'IgeBox2dWorld',
 	
@@ -46,7 +52,7 @@ var IgeBox2dWorld = IgeEventingClass.extend({
 	/**
 	 * Creates a Box2d fixture and returns it.
 	 * @param params
-	 * @return {b2FixtureDef}
+	 * @return {Object} b2FixtureDef
 	 */
 	createFixture: function (params) {
 		var tempDef = new this.b2FixtureDef(),
@@ -68,7 +74,7 @@ var IgeBox2dWorld = IgeEventingClass.extend({
 	 * based on the supplied body definition.
 	 * @param {IgeEntityBox2d} entity
 	 * @param {Object} body
-	 * @return {b2Body}
+	 * @return {Object} b2Body
 	 */
 	createBody: function (entity, body) {
 		var tempDef = new this.b2BodyDef(),

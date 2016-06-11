@@ -1,5 +1,8 @@
 /**
  * The engine's box2d component class.
+ * @class Components.Physics.Box2d.IgeBox2dComponent
+ * @alternateClassName IgeBox2dComponent
+ * @extends IgeEventingClass
  */
 var IgeBox2dComponent = IgeEventingClass.extend({
 	classId: 'IgeBox2dComponent',
@@ -139,7 +142,7 @@ var IgeBox2dComponent = IgeEventingClass.extend({
 	 * renderer. In mode 1 the box2d simulation is stepped at a constant
 	 * speed regardless of the engine's renderer. This must be set *before*
 	 * calling the start() method in order for the setting to take effect.
-	 * @param {Integer} val The mode, either 0 or 1.
+	 * @param {Number} val The mode, either 0 or 1.
 	 * @returns {*}
 	 */
 	mode: function (val) {
@@ -196,7 +199,7 @@ var IgeBox2dComponent = IgeEventingClass.extend({
 
 	/**
 	 * Gets the current Box2d world object.
-	 * @return {b2World}
+	 * @return {Object} b2World
 	 */
 	world: function () {
 		return this._world;
@@ -222,7 +225,7 @@ var IgeBox2dComponent = IgeEventingClass.extend({
 	/**
 	 * Creates a Box2d fixture and returns it.
 	 * @param params
-	 * @return {b2FixtureDef}
+	 * @return {Object} b2FixtureDef
 	 */
 	createFixture: function (params) {
 		var tempDef = new this.b2FixtureDef(),
@@ -244,7 +247,7 @@ var IgeBox2dComponent = IgeEventingClass.extend({
 	 * based on the supplied body definition.
 	 * @param {IgeEntity} entity
 	 * @param {Object} body
-	 * @return {b2Body}
+	 * @return {Object} b2Body
 	 */
 	createBody: function (entity, body) {
 		var tempDef = new this.b2BodyDef(),

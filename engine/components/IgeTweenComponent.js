@@ -2,6 +2,9 @@
  * This component is already included in the IgeEngine (ige)
  * instance and is not designed for use in any other way!
  * It handles global tween processing on all tweening values.
+ * @class Components.IgeTweenComponent
+ * @alternateClassName IgeTweenComponent
+ * @extends IgeClass
  */
 var IgeTweenComponent = IgeClass.extend({
 	classId: 'IgeTweenComponent',

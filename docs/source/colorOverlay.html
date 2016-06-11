@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>The source code</title>
+  <link href="../resources/prettify/prettify.css" type="text/css" rel="stylesheet" />
+  <script type="text/javascript" src="../resources/prettify/prettify.js"></script>
+  <style type="text/css">
+    .highlight { display: block; background-color: #ddd; }
+  </style>
+  <script type="text/javascript">
+    function highlight() {
+      document.getElementById(location.hash.replace(/#/, "")).className = "highlight";
+    }
+  </script>
+</head>
+<body onload="prettyPrint(); highlight();">
+  <pre class="prettyprint lang-js"><span id='Core-IgeFilters-method-colorOverlay'>/**
+</span> * @member Core.IgeFilters
+ * @param canvas
+ * @param ctx
+ * @param originalImage
+ * @param texture
+ * @param data
+ */
+IgeFilters.colorOverlay = function (canvas, ctx, originalImage, texture, data) {
+	// Set the composite operation and draw the colour over the top
+	ctx.globalCompositeOperation = 'source-atop';
+
+	ctx.fillStyle = data.color;
+	ctx.fillRect(0, 0, canvas.width, canvas.height);
+};</pre>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>The source code</title>
+  <link href="../resources/prettify/prettify.css" type="text/css" rel="stylesheet" />
+  <script type="text/javascript" src="../resources/prettify/prettify.js"></script>
+  <style type="text/css">
+    .highlight { display: block; background-color: #ddd; }
+  </style>
+  <script type="text/javascript">
+    function highlight() {
+      document.getElementById(location.hash.replace(/#/, "")).className = "highlight";
+    }
+  </script>
+</head>
+<body onload="prettyPrint(); highlight();">
+  <pre class="prettyprint lang-js"><span id='Ui-IgeUiAutoFlow'>/**
+</span> * There is no description yet
+ * @class Ui.IgeUiAutoFlow
+ * @alternateClassName IgeUiAutoFlow
+ * @extends IgeUiElement
+ */
+var IgeUiAutoFlow = IgeUiElement.extend({
+	classId: 'IgeUiAutoFlow',
+
+	init: function () {
+		IgeUiElement.prototype.init.call(this);
+
+		this._currentHeight = 0;
+	},
+
+	tick: function (ctx) {
+		// Loop children and re-position then
+		var arr = this._children,
+			arrCount = arr.length, i,
+			item, itemY, currentY = 0;
+
+		for (i = 0; i &lt; arrCount; i++) {
+			item = arr[i];
+			itemY = item._bounds2d.y;
+
+			item.top(currentY);
+
+			currentY += itemY;
+		}
+
+		// Now do the super-class tick
+		IgeUiElement.prototype.tick.call(this, ctx);
+	}
+});</pre>
+</body>
+</html>

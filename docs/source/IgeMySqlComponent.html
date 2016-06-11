@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>The source code</title>
+  <link href="../resources/prettify/prettify.css" type="text/css" rel="stylesheet" />
+  <script type="text/javascript" src="../resources/prettify/prettify.js"></script>
+  <style type="text/css">
+    .highlight { display: block; background-color: #ddd; }
+  </style>
+  <script type="text/javascript">
+    function highlight() {
+      document.getElementById(location.hash.replace(/#/, "")).className = "highlight";
+    }
+  </script>
+</head>
+<body onload="prettyPrint(); highlight();">
+  <pre class="prettyprint lang-js"><span id='Components-Database-MySql-IgeMySqlComponent'>/**
+</span> * There is no description yet
+ * @class Components.Database.MySql.IgeMySqlComponent
+ * @alternateClassName IgeMySqlComponent
+ * @extends IgeEventingClass
+ */
+var IgeMySqlComponent = IgeEventingClass.extend({
+	classId: 'IgeMySqlComponent',
+	componentId: 'mysql',
+
+	init: function (entity, options) {
+		this._entity = entity;
+		this._options = options;
+
+		// Setup the mongo module
+		this._mysql = require('../../../' + modulePath + 'mysql');
+
+		// Implement the mongo methods
+		this.implement(IgeMySql);
+
+		// Pass the options to the settings method
+		this.settings(options);
+
+		this.log('Database component initiated!');
+	}
+});
+
+if (typeof(module) !== 'undefined' &amp;&amp; typeof(module.exports) !== 'undefined') { module.exports = IgeMySqlComponent; }</pre>
+</body>
+</html>

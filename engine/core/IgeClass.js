@@ -1,5 +1,7 @@
 /**
  * The base class system.
+ * @class Core.IgeClass
+ * @alternateClassName IgeClass
  */
 var IgeClass = (function () {
 	var initializing = false,
@@ -9,46 +11,48 @@ var IgeClass = (function () {
 		IgeClass = function () {},
 		
 		/**
+         * @method log
 		 * Provides logging capabilities to all IgeClass instances.
+         * #Log a message
+         *     var entity = new IgeEntity();
+         *
+         *     // Will output:
+         *     //     IGE *log* [IgeEntity] : hello
+         *     entity.log('Hello');
+         * #Log an info message with an optional parameter
+         *     var entity = new IgeEntity(),
+         *         param = 'moo';
+         *
+         *     // Will output:
+         *     //    moo
+         *     //    IGE *log* [IgeEntity] : hello
+         *     entity.log('Hello', 'info', param);
+         * #Log a warning message (which will cause a stack trace to be shown)
+         *     var entity = new IgeEntity();
+         *
+         *     // Will output (stack trace is just an example here, real one will be more useful):
+         *     //    Stack: {anonymous}()@<anonymous>:2:8
+         *     //    ---- Object.InjectedScript._evaluateOn (<anonymous>:444:39)
+         *     //    ---- Object.InjectedScript._evaluateAndWrap (<anonymous>:403:52)
+         *     //    ---- Object.InjectedScript.evaluate (<anonymous>:339:21)
+         *     //    IGE *warning* [IgeEntity] : A test warning
+         *     entity.log('A test warning', 'warning');
+         * #Log an error message (which will cause an exception to be raised and a stack trace to be shown)
+         *     var entity = new IgeEntity();
+         *
+         *     // Will output (stack trace is just an example here, real one will be more useful):
+         *     //    Stack: {anonymous}()@<anonymous>:2:8
+         *     //    ---- Object.InjectedScript._evaluateOn (<anonymous>:444:39)
+         *     //    ---- Object.InjectedScript._evaluateAndWrap (<anonymous>:403:52)
+         *     //    ---- Object.InjectedScript.evaluate (<anonymous>:339:21)
+         *     //    IGE *error* [IgeEntity] : An error message
+         *     entity.log('An error message', 'error');
 		 * @param {String} text The text to log.
 		 * @param {String} type The type of log to output, can be 'log',
 		 * 'info', 'warning' or 'error'.
 		 * @param {Object=} obj An optional object that will be output
 		 * before the log text is output.
-		 * @example #Log a message
-		 *     var entity = new IgeEntity();
-		 *     
-		 *     // Will output:
-		 *     //     IGE *log* [IgeEntity] : hello
-		 *     entity.log('Hello');
-		 * @example #Log an info message with an optional parameter
-		 *     var entity = new IgeEntity(),
-		 *         param = 'moo';
-		 *	
-		 *     // Will output:
-		 *     //    moo
-		 *     //    IGE *log* [IgeEntity] : hello
-		 *     entity.log('Hello', 'info', param);
-		 * @example #Log a warning message (which will cause a stack trace to be shown)
-		 *     var entity = new IgeEntity();
-		 *	
-		 *     // Will output (stack trace is just an example here, real one will be more useful):
-		 *     //    Stack: {anonymous}()@<anonymous>:2:8
-		 *     //    ---- Object.InjectedScript._evaluateOn (<anonymous>:444:39)
-		 *     //    ---- Object.InjectedScript._evaluateAndWrap (<anonymous>:403:52)
-		 *     //    ---- Object.InjectedScript.evaluate (<anonymous>:339:21)
-		 *     //    IGE *warning* [IgeEntity] : A test warning
-		 *     entity.log('A test warning', 'warning');
-		 * @example #Log an error message (which will cause an exception to be raised and a stack trace to be shown)
-		 *     var entity = new IgeEntity();
-		 *	
-		 *     // Will output (stack trace is just an example here, real one will be more useful):
-		 *     //    Stack: {anonymous}()@<anonymous>:2:8
-		 *     //    ---- Object.InjectedScript._evaluateOn (<anonymous>:444:39)
-		 *     //    ---- Object.InjectedScript._evaluateAndWrap (<anonymous>:403:52)
-		 *     //    ---- Object.InjectedScript.evaluate (<anonymous>:339:21)
-		 *     //    IGE *error* [IgeEntity] : An error message
-		 *     entity.log('An error message', 'error');
+         * @return {IgeClass} this
 		 */
 		log = function (text, type, obj) {
 			if (igeConfig.debug._enabled) {
@@ -106,37 +110,41 @@ var IgeClass = (function () {
 		},
 
 		/**
+         * @method classId
 		 * Returns the class id. Primarily used to help identify
 		 * what class an instance was instantiated with and is also
 		 * output during the ige.scenegraph() method's console logging
 		 * to show what class an object belongs to.
-		 * @example #Get the class id of an object
+		 * #Get the class id of an object
 		 *     var entity = new IgeEntity();
 		 *	
 		 *     // Will output "IgeEntity"
 		 *     console.log(entity.classId());
+         * @return {string} class id
 		 */
 		classId = function () {
 			return this._classId;
 		},
 
 		/**
+         * @method addComponent
 		 * Creates a new instance of the component argument passing
 		 * the options argument to the component as it is initialised.
 		 * The new component instance is then added to "this" via
 		 * a property name that is defined in the component class as
 		 * "componentId".
+         * #Add the velocity component to an entity
+         *     var entity = new IgeEntity();
+         *     entity.addComponent(IgeVelocityComponent);
+         *
+         *     // Now that the component is added, we can access
+         *     // the component via it's namespace. Call the
+         *     // "byAngleAndPower" method of the velocity component:
+         *     entity.velocity.byAngleAndPower(Math.radians(20), 0.1);
 		 * @param {IgeClass} component The class definition of the component.
 		 * @param {Object=} options An options parameter to pass to the component
 		 * on init.
-		 * @example #Add the velocity component to an entity
-		 *     var entity = new IgeEntity();
-		 *     entity.addComponent(IgeVelocityComponent);
-		 *     
-		 *     // Now that the component is added, we can access
-		 *     // the component via it's namespace. Call the 
-		 *     // "byAngleAndPower" method of the velocity component:
-		 *     entity.velocity.byAngleAndPower(Math.radians(20), 0.1);
+         * @return {IgeClass} this
 		 */
 		addComponent = function (component, options) {
 			var newComponent = new component(this, options);
@@ -150,17 +158,19 @@ var IgeClass = (function () {
 		},
 
 		/**
+         * @method removeComponent
 		 * Removes a component by it's id.
+         * #Remove a component by it's id (namespace)
+         *     var entity = new IgeEntity();
+         *
+         *     // Let's add the velocity component
+         *     entity.addComponent(IgeVelocityComponent);
+         *
+         *     // Now that the component is added, let's remove
+         *     // it via it's id ("velocity")
+         *     entity.removeComponent('velocity');
 		 * @param {String} componentId The id of the component to remove.
-		 * @example #Remove a component by it's id (namespace)
-		 *     var entity = new IgeEntity();
-		 *     
-		 *     // Let's add the velocity component
-		 *     entity.addComponent(IgeVelocityComponent);
-		 *	
-		 *     // Now that the component is added, let's remove
-		 *     // it via it's id ("velocity")
-		 *     entity.removeComponent('velocity');
+         * @return {IgeClass} this
 		 */
 		removeComponent = function (componentId) {
 			// If the component has a destroy method, call it
@@ -179,48 +189,50 @@ var IgeClass = (function () {
 		},
 
 		/**
+         * @method implement
 		 * Copies all properties and methods from the classObj object
 		 * to "this". If the overwrite flag is not set or set to false,
 		 * only properties and methods that don't already exists in
 		 * "this" will be copied. If overwrite is true, they will be
 		 * copied regardless.
-		 * @param {Function} classObj
-		 * @param {Boolean} overwrite
-		 * @example #Implement all the methods of an object into another object
-		 *     // Create a couple of test entities with ids
-		 *     var entity1 = new IgeEntity().id('entity1'),
-		 *         entity2 = new IgeEntity().id('entity2');
-		 *	
-		 *     // Let's define an object with a couple of methods
-		 *     var obj = {
+         * #Implement all the methods of an object into another object
+         *     // Create a couple of test entities with ids
+         *     var entity1 = new IgeEntity().id('entity1'),
+         *         entity2 = new IgeEntity().id('entity2');
+         *
+         *     // Let's define an object with a couple of methods
+         *     var obj = {
 		 *         newMethod1: function () {
 		 *             console.log('method1 called on object: ' + this.id());
 		 *         },
-		 *         
+		 *
 		 *         newMethod2: function () {
 		 *             console.log('method2 called on object: ' + this.id());
 		 *         }
 		 *     };
-		 *	
-		 *     // Now let's implement the methods on our entities
-		 *     entity1.implement(obj);
-		 *     entity2.implement(obj);
-		 *     
-		 *     // The entities now have the newMethod1 and newMethod2
-		 *     // methods as part of their instance so we can call them:
-		 *     entity1.newMethod1();
-		 *     
-		 *     // The output to the console is:
-		 *     //    method1 called on object: entity1
-		 *     
-		 *     // Now let's call newMethod2 on entity2:
-		 *     entity2.newMethod2();
-		 *	
-		 *     // The output to the console is:
-		 *     //    method2 called on object: entity2
-		 *     
-		 *     // As you can see, this is a great way to add extra modular
-		 *     // functionality to objects / entities at runtime.
+         *
+         *     // Now let's implement the methods on our entities
+         *     entity1.implement(obj);
+         *     entity2.implement(obj);
+         *
+         *     // The entities now have the newMethod1 and newMethod2
+         *     // methods as part of their instance so we can call them:
+         *     entity1.newMethod1();
+         *
+         *     // The output to the console is:
+         *     //    method1 called on object: entity1
+         *
+         *     // Now let's call newMethod2 on entity2:
+         *     entity2.newMethod2();
+         *
+         *     // The output to the console is:
+         *     //    method2 called on object: entity2
+         *
+         *     // As you can see, this is a great way to add extra modular
+         *     // functionality to objects / entities at runtime.
+		 * @param {Function} classObj
+		 * @param {Boolean} overwrite
+         * @return {IgeClass} this
 		 */
 		implement = function (classObj, overwrite) {
 			var i, obj = classObj.prototype || classObj;
@@ -236,18 +248,19 @@ var IgeClass = (function () {
 		},
 
 		/**
+         * @method data
 		 * Gets / sets a key / value pair in the object's data object. Useful for
 		 * storing arbitrary game data in the object.
+         * #Set some arbitrary data key value pair
+         *     var entity = new IgeEntity();
+         *     entity.data('playerScore', 100);
+         *     entity.data('playerName', 'iRock');
+         * #Get the value of a data key
+         *     console.log(entity.data('playerScore'));
+         *     console.log(entity.data('playerName'));
 		 * @param {String} key The key under which the data resides.
-		 * @param {*=} value The data to set under the specified key.
-		 * @example #Set some arbitrary data key value pair
-		 *     var entity = new IgeEntity();
-		 *     entity.data('playerScore', 100);
-		 *     entity.data('playerName', 'iRock');
-		 * @example #Get the value of a data key
-		 *     console.log(entity.data('playerScore'));
-		 *     console.log(entity.data('playerName'));
-		 * @return {*}
+		 * @param {Object=} value The data to set under the specified key.
+		 * @return {IgeClass/Object}
 		 */
 		data = function (key, value) {
 			if (key !== undefined) {
@@ -268,8 +281,7 @@ var IgeClass = (function () {
 
 	/**
 	 * Create a new IgeClass that inherits from this class
-	 * @name extend
-	 * @example #Creating a new class by extending an existing one
+	 * #Creating a new class by extending an existing one
 	 *     var NewClass = IgeClass.extend({
 	 *         // Init is your constructor
 	 *         init: function () {
@@ -278,7 +290,7 @@ var IgeClass = (function () {
 	 *     });
 	 * 
 	 * Further reading: [Extending Classes](http://www.isogenicengine.com/documentation/isogenic-game-engine/versions/1-1-0/manual/engine-fundamentals/classes/extending-classes/)
-	 * @return {Function}
+	 * @return {Object}
 	 */
 	IgeClass.extend = function () {
 		var name,

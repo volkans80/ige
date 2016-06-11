@@ -1,5 +1,8 @@
 /**
  * Creates a new map that has two dimensions (x and y) to it's data.
+ * @class Core.IgeMap2d
+ * @alternateClassName IgeMap2d
+ * @extends IgeClass
  */
 var IgeMap2d = IgeClass.extend({
 	classId: 'IgeMap2d',
@@ -146,8 +149,8 @@ var IgeMap2d = IgeClass.extend({
 	/**
 	 * Gets / sets the map's tile data.
 	 * @param {Array} val The map data array.
-	 * @param {Integer} startX The start x co-ordinate of the data.
-	 * @param {Integer} startY The start y co-ordinate of the data.
+	 * @param {Number} startX The start x co-ordinate of the data.
+	 * @param {Number} startY The start y co-ordinate of the data.
 	 * @return {*}
 	 */
 	mapData: function (val, startX, startY) {
@@ -221,8 +224,8 @@ var IgeMap2d = IgeClass.extend({
 	 * @param {Number} y
 	 * @param {Array} val The map data array.
 	 */
-		//TODO: Write this function's internals!
 	insertMapData: function (x, y, val) {
+        //TODO: Write this function's internals!
 		// Loop the data and fill the map data with it
 	},
 
@@ -233,8 +236,8 @@ var IgeMap2d = IgeClass.extend({
 	 * @param {Array} val The map data array to rotate.
 	 * @param {Number} mode Either -90, 90 or 180 to denote the type of rotation to perform.
 	 */
-		//TODO: Write this function's internals!
 	rotateData: function (val, mode) {
+        //TODO: Write this function's internals!
 		switch (mode) {
 			case -90:
 				// Rotate the data

@@ -1,0 +1,1 @@
+Ext.data.JsonP.updating_engine({"guide":"<h1 id='updating_engine-section-updating-the-engine'>Updating the Engine</h1>\n\n<p>If you have cloned the repo via git (or the GitHub app) you can update the repo at any time by opening a terminal window, changing directory to the “ige” folder and typing:</p>\n\n<pre><code>git pull\n</code></pre>\n","title":"Updating The Engine"});

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>The source code</title>
+  <link href="../resources/prettify/prettify.css" type="text/css" rel="stylesheet" />
+  <script type="text/javascript" src="../resources/prettify/prettify.js"></script>
+  <style type="text/css">
+    .highlight { display: block; background-color: #ddd; }
+  </style>
+  <script type="text/javascript">
+    function highlight() {
+      document.getElementById(location.hash.replace(/#/, "")).className = "highlight";
+    }
+  </script>
+</head>
+<body onload="prettyPrint(); highlight();">
+  <pre class="prettyprint lang-js"><span id='Core-IgeTimeout'>/**
+</span> * Provides an alternative to setTimeout() which works based on the engine's internal
+ * time system allowing timeouts to fire correctly, taking into account pausing the
+ * game and differences in rendering speed etc.
+ * @class Core.IgeTimeout
+ * @alternateClassName IgeTimeout
+ * @extends IgeInterval
+ */
+var IgeTimeout = IgeInterval.extend({
+	classId: 'IgeTimeout',
+	
+<span id='Core-IgeTimeout-method-init'>	/**
+</span>	 * Creates a new timeout that will call the passed method after the number of
+	 * milliseconds specified by the timeout parameter has been reached.
+	 * @param {Function} method The method to call on timeout.
+	 * @param {Number} timeout The number of milliseconds before the timeout.
+	 */
+	init: function (method, timeout) {
+		IgeInterval.prototype.init.call(this, method, timeout);
+	},
+
+<span id='Core-IgeTimeout-method-cancel'>    /**
+</span>     * Cancels the timer, stops the timeout.
+     * @returns {*}
+     */
+    cancel: function () {
+        return IgeInterval.prototype.cancel.call(this);
+    },
+
+<span id='Core-IgeTimeout-method-reset'>    /**
+</span>     * Resets the time and lets the timeout begin anew.
+     * @returns {*}
+     */
+    reset: function() {
+        this._time = 0;
+        if (ige.time._timers.indexOf(this) == -1) {
+            ige.time.addTimer(this);
+        }
+    },
+	
+<span id='Core-IgeTimeout-method-update'>	/**
+</span>	 * Checks for a timeout event to see if we should call the timeout method. This is
+	 * called automatically by the IgeTimeComponent class and does not need to be
+	 * called manually.
+	 * @returns {*}
+	 */
+	update: function () {
+		if (this._time &gt; this._interval) {
+			// Fire an interval
+			this._method(ige._currentTime);
+			ige.time.removeTimer(this);
+		}
+		
+		return this;
+	}
+});
+
+if (typeof(module) !== 'undefined' &amp;&amp; typeof(module.exports) !== 'undefined') { module.exports = IgeTimeout; }</pre>
+</body>
+</html>

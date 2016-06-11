@@ -1,5 +1,8 @@
 /**
  * Creates a new 3d point (x, y, z).
+ * @class Core.IgePoint3d
+ * @alternateClassName IgePoint3d
+ * @extends IgeClass
  */
 var IgePoint3d = IgeClass.extend({
 	classId: 'IgePoint3d',

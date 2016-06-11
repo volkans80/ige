@@ -1,6 +1,9 @@
 /**
  * When added to a viewport, automatically adds entity rotate
  * capabilities to the selected entity in the scenegraph viewer.
+ * @class Components.Editor.IgeEditorRotateComponent
+ * @alternateClassName IgeEditorRotateComponent
+ * @extends IgeEventingClass
  */
 var IgeEditorRotateComponent = IgeEventingClass.extend({
 	classId: 'IgeEditorRotateComponent',

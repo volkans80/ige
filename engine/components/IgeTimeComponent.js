@@ -1,3 +1,9 @@
+/**
+ * There is no description yet
+ * @class Components.IgeTimeComponent
+ * @alternateClassName IgeTimeComponent
+ * @extends IgeEventingClass
+ */
 var IgeTimeComponent = IgeEventingClass.extend({
 	classId: 'IgeTimeComponent',
 	componentId: 'time',

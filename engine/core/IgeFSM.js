@@ -1,5 +1,8 @@
 /**
  * A simple finite state machine implementation.
+ * @class Core.IgeFSM
+ * @alternateClassName IgeFSM
+ * @extends IgeClass
  */
 var IgeFSM = IgeClass.extend({
 	classId: 'IgeFSM',
@@ -61,7 +64,7 @@ var IgeFSM = IgeClass.extend({
 	 * Defines a state with a name and a state definition.
 	 * @param {String} name The name of the state to define.
 	 * @param {Object} definition The state definition object.
-	 * @example #Define a state
+	 * #Define a state
 	 *     var fsm = new IgeFSM();
 	 *     
 	 *     // Define an "idle" state
@@ -95,7 +98,7 @@ var IgeFSM = IgeClass.extend({
 	 * between the two specified states is executed, that will call the callback method
 	 * passed to it in the second parameter and include either true to allow the
 	 * transition to continue, or false to cancel it in the first parameter.
-	 * @example #Define a state transition
+	 * #Define a state transition
 	 *     var fsm = new IgeFSM();
 	 *     
 	 *     // Define an "idle" state

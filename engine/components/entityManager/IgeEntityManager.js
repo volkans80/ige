@@ -1,3 +1,9 @@
+/**
+ * There is no description yet
+ * @class Components.EntityManager.IgeEntityManager
+ * @alternateClassName IgeEntityManager
+ * @extends IgeEventingClass
+ */
 var IgeEntityManager = IgeEventingClass.extend({
 	classId: 'IgeEntityManager',
 	componentId: 'entityManager',

@@ -1,8 +1,12 @@
 // TODO: Add "overflow" with automatic scroll-bars
+/**
+ * @class Extensions.IgeUiStyleExtension
+ * @alternateClassName IgeUiStyleExtension
+ */
 var IgeUiStyleExtension = {
 	/**
 	 * Gets / sets the color to use as the font color.
-	 * @param {CSSColor, CanvasGradient, CanvasPattern=} color
+	 * @param {Object/CanvasGradient/CanvasPattern=} color CSS color, canvas gradient or canvas pattern
 	 * @return {*} Returns this when setting the value or the current value if none is specified.
 	 */
 	color: function (color) {
@@ -135,7 +139,7 @@ var IgeUiStyleExtension = {
 	/**
 	 * Gets / sets the color to use as a background when
 	 * rendering the UI element.
-	 * @param {CSSColor, CanvasGradient, CanvasPattern=} color
+	 * @param {Object/CanvasGradient/CanvasPattern=} color CSS color, canvas gradient or canvas pattern
 	 * @return {*} Returns this when setting the value or the current value if none is specified.
 	 */
 	backgroundColor: function (color) {

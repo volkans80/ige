@@ -1,5 +1,8 @@
 /**
  * Creates a new path using the A* path-finding algorithm.
+ * @class Core.IgePathFinder
+ * @alternateClassName IgePathFinder
+ * @extends IgeEventingClass
  */
 var IgePathFinder = IgeEventingClass.extend({
 	classId: 'IgePathFinder',

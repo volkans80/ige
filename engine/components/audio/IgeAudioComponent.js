@@ -1,5 +1,8 @@
 /**
  * Manages audio mixing and output.
+ * @class Components.Audio.IgeAudioComponent
+ * @alternateClassName IgeAudioComponent
+ * @extends IgeEventingClass
  */
 var IgeAudioComponent = IgeEventingClass.extend({
 	classId: 'IgeAudioComponent',

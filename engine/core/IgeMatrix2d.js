@@ -1,6 +1,8 @@
 // TODO: Clean up the variable declarations in this file so they all run on the same var call at the top of the method.
 /**
  * Creates a new transformation matrix.
+ * @class Core.IgeMatrix2d
+ * @alternateClassName IgeMatrix2d
  */
 var IgeMatrix2d = function() {
 	this.matrix = [
@@ -60,6 +62,12 @@ IgeMatrix2d.prototype = {
 		return point;
 	},
 
+    /**
+     *
+     * @param points
+     * @param obj
+     * @returns {*}
+     */
 	transform: function (points, obj) {
 		var pointIndex,
 			pointCount = points.length;
@@ -75,6 +83,7 @@ IgeMatrix2d.prototype = {
 	 * Create a new rotation matrix and set it up for the specified angle in radians.
 	 * @param {Number} angle
 	 * @return {IgeMatrix2d} A new matrix object.
+     * @private
 	 */
 	_newRotate: function(angle) {
 		var m = new IgeMatrix2d();
@@ -82,6 +91,11 @@ IgeMatrix2d.prototype = {
 		return m;
 	},
 
+    /**
+     *
+     * @param angle
+     * @returns {IgeMatrix2d}
+     */
 	rotateBy: function(angle) {
 		var m = new IgeMatrix2d();
 
@@ -94,6 +108,11 @@ IgeMatrix2d.prototype = {
 		return this;
 	},
 
+    /**
+     *
+     * @param angle
+     * @returns {IgeMatrix2d}
+     */
 	rotateTo: function (angle) {
 		var tm = this.matrix,
 			c = Math.cos(angle),
@@ -137,7 +156,7 @@ IgeMatrix2d.prototype = {
 	 * @param {Number} y Y scale magnitude.
 	 *
 	 * @return {IgeMatrix2d} a matrix object.
-	 *
+	 * @private
 	 * @static
 	 */
 	_newScale: function(x, y) {
@@ -149,6 +168,12 @@ IgeMatrix2d.prototype = {
 		return m;
 	},
 
+    /**
+     *
+     * @param x
+     * @param y
+     * @returns {IgeMatrix2d}
+     */
 	scaleBy: function(x, y) {
 		var m = new IgeMatrix2d();
 
@@ -160,6 +185,12 @@ IgeMatrix2d.prototype = {
 		return this;
 	},
 
+    /**
+     *
+     * @param x
+     * @param y
+     * @returns {IgeMatrix2d}
+     */
 	scaleTo: function(x, y) {
 		var tm = this.matrix;
 		//this.identity();
@@ -180,6 +211,7 @@ IgeMatrix2d.prototype = {
 	 * @param {Number} x X translation magnitude.
 	 * @param {Number} y Y translation magnitude.
 	 * @return {IgeMatrix2d} A new matrix object.
+     * @private
 	 */
 	_newTranslate: function (x, y) {
 		var m = new IgeMatrix2d();
@@ -190,6 +222,12 @@ IgeMatrix2d.prototype = {
 		return m;
 	},
 
+    /**
+     *
+     * @param x
+     * @param y
+     * @returns {IgeMatrix2d} this
+     */
 	translateBy: function (x, y) {
 		var m = new IgeMatrix2d();
 
@@ -205,6 +243,7 @@ IgeMatrix2d.prototype = {
 	 * Sets this matrix as a translation matrix.
 	 * @param x
 	 * @param y
+     * @return {IgeMatrix2d} this
 	 */
 	translateTo: function (x, y) {
 		var tm = this.matrix;
@@ -224,7 +263,7 @@ IgeMatrix2d.prototype = {
 	/**
 	 * Copy into this matrix the given matrix values.
 	 * @param {IgeMatrix2d} matrix 
-	 * @return {Object} "this".
+	 * @return {IgeMatrix2d} this.
 	 */
 	copy: function (matrix) {
 		matrix = matrix.matrix;
@@ -242,7 +281,12 @@ IgeMatrix2d.prototype = {
 
 		return this;
 	},
-	
+
+    /**
+     *
+     * @param matrix
+     * @returns {Boolean}
+     */
 	compare: function (matrix) {
 		var thisMatrix = this.matrix,
 			thatMatrix = matrix.matrix;
@@ -258,7 +302,7 @@ IgeMatrix2d.prototype = {
 
 	/**
 	 * Set this matrix to the identity matrix.
-	 * @return {Object} "this".
+	 * @return {IgeMatrix2d} this.
 	 */
 	identity: function() {
 
@@ -282,7 +326,7 @@ IgeMatrix2d.prototype = {
 	 * Multiply this matrix by a given matrix.
 	 * @param {IgeMatrix2d} m The IgeMatrix2d to multiply the
 	 * current matrix by.
-	 * @return {Object} "this".
+	 * @return {IgeMatrix2d} this.
 	 */
 	multiply: function (m) {
 		var tm = this.matrix,
@@ -325,7 +369,7 @@ IgeMatrix2d.prototype = {
 	 * Premultiply this matrix by a given matrix.
 	 * @param {IgeMatrix2d} m The IgeMatrix2d to premultiply the
 	 * current matrix by.
-	 * @return {Object} "this".
+	 * @return {IgeMatrix2d} this.
 	 */
 	premultiply: function(m) {
 
@@ -403,7 +447,7 @@ IgeMatrix2d.prototype = {
 	/**
 	 * Multiply this matrix by a scalar.
 	 * @param scalar {number} Scalar value.
-	 * @return this
+	 * @return {IgeMatrix2d} this
 	 */
 	multiplyScalar: function (scalar) {
 		var i;
@@ -421,6 +465,7 @@ IgeMatrix2d.prototype = {
 	 * is set non-cumulative with the previous matrix data.
 	 * @param {CanvasRenderingContext2d} ctx The rendering context to
 	 * set the transform matrix for.
+     * @return {IgeMatrix2d} this
 	 */
 	transformRenderingContextSet: function(ctx) {
 		var m = this.matrix;
@@ -434,6 +479,7 @@ IgeMatrix2d.prototype = {
 	 * is set cumulative with the previous matrix data.
 	 * @param {CanvasRenderingContext2d} ctx The rendering context to
 	 * set the transform matrix for.
+     * @return {IgeMatrix2d} this
 	 */
 	transformRenderingContext: function(ctx) {
 		var m = this.matrix;

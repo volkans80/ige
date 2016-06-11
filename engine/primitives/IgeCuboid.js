@@ -1,3 +1,9 @@
+/**
+ * There is no description yet
+ * @class Primitives.IgeCuboid
+ * @alternateClassName IgeCuboid
+ * @extends IgeEntity
+ */
 var IgeCuboid = IgeEntity.extend({
 	classId: 'IgeCuboid',
 	

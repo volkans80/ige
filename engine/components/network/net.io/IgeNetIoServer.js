@@ -1,3 +1,7 @@
+/**
+ * @class Components.Network.NetIo.IgeNetIoServer
+ * @alternateClassName IgeNetIoServer
+ */
 var IgeNetIoServer = {
 	_idCounter: 0,
 	_requests: {},

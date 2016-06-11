@@ -1,3 +1,9 @@
+/**
+ * There is no description yet
+ * @class Core.IgeParticle
+ * @alternateClassName IgeParticle
+ * @extends IgeEntity
+ */
 var IgeParticle = IgeEntity.extend({
 	classId: 'IgeParticle',
 	

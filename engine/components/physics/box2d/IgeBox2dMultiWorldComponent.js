@@ -1,5 +1,8 @@
 /**
  * The engine's box2d multi-world component class.
+ * @class Components.Physics.Box2d.IgeBox2dMultiWorldComponent
+ * @alternateClassName IgeBox2dMultiWorldComponent
+ * @extends IgeEventingClass
  */
 var IgeBox2dMultiWorldComponent = IgeEventingClass.extend({
 	classId: 'IgeBox2dMultiWorldComponent',
@@ -111,7 +114,7 @@ var IgeBox2dMultiWorldComponent = IgeEventingClass.extend({
 
 	/**
 	 * Gets the Box2d world object by it's id.
-	 * @return {b2World}
+	 * @return {Object} b2World
 	 */
 	world: function (id) {
 		return this._worlds[id];

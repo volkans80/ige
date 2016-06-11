@@ -1,6 +1,9 @@
 /**
  * When added to a viewport, automatically adds mouse zooming
  * capabilities to the viewport's camera.
+ * @class Components.IgeMouseZoomComponent
+ * @alternateClassName IgeMouseZoomComponent
+ * @extends IgeEventingClass
  */
 var IgeMouseZoomComponent = IgeEventingClass.extend({
 	classId: 'IgeMouseZoomComponent',

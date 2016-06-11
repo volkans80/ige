@@ -1,3 +1,7 @@
+/**
+ * @class Extensions.IgeUiPositionExtension
+ * @alternateClassName IgeUiPositionExtension
+ */
 var IgeUiPositionExtension = {
 	/**
 	 * Gets / sets the entity's x position relative to the left of
@@ -335,7 +339,7 @@ var IgeUiPositionExtension = {
 
 	/**
 	 * Gets / sets the geometry.x in pixels.
-	 * @param {Number, String=} px Either the width in pixels or a percentage
+	 * @param {Number/String=} px Either the width in pixels or a percentage
 	 * @param {Boolean=} lockAspect
 	 * @param {Number=} modifier A value to add to the final width. Useful when
 	 * you want to alter a percentage value by a certain number of pixels after

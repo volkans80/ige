@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>The source code</title>
+  <link href="../resources/prettify/prettify.css" type="text/css" rel="stylesheet" />
+  <script type="text/javascript" src="../resources/prettify/prettify.js"></script>
+  <style type="text/css">
+    .highlight { display: block; background-color: #ddd; }
+  </style>
+  <script type="text/javascript">
+    function highlight() {
+      document.getElementById(location.hash.replace(/#/, "")).className = "highlight";
+    }
+  </script>
+</head>
+<body onload="prettyPrint(); highlight();">
+  <pre class="prettyprint lang-js"><span id='Core-IgeFilters-method-edgeDetect'>/**
+</span> * @member Core.IgeFilters
+ * @param canvas
+ * @param ctx
+ * @param originalImage
+ * @param texture
+ * @param data
+ */
+IgeFilters.edgeDetect = function (canvas, ctx, originalImage, texture, data) {
+	if (!texture._filterImageDrawn || !data || !data.cumulative) {
+		ctx.clearRect(0, 0, canvas.width, canvas.height);
+		ctx.drawImage(originalImage, 0, 0);
+		texture._filterImageDrawn = true;
+	}
+
+	var newData = IgeFilters._convolute(
+			ctx.getImageData(
+				0,
+				0,
+				canvas.width,
+				canvas.height
+			),
+			[
+				-1,	-1,	-1,	-1,	-1,
+				-1,	2,	2,	2,	-1,
+				-1,	2,	0,	2,	-1,
+				-1,	2,	2,	2,	-1,
+				-1,	-1,	-1,	-1,	-1
+			],
+			true
+		),
+		arr = newData.data,
+		arrCount = arr.length,
+		i, r, g, b, v;
+
+	for (i = 0; i &lt; arrCount; i += 4) {
+		r = arr[i];
+		g = arr[i+1];
+		b = arr[i+2];
+
+		v = (r + g + b) / 3;
+		v *= 1.1;
+
+		v = v &gt;= data.value ? 255 : 0;
+
+		arr[i] = arr[i+1] = arr[i+2] = v;
+	}
+
+	// Apply the filter and then put the new pixel data
+	ctx.putImageData(
+		newData,
+		0,
+		0
+	);
+};</pre>
+</body>
+</html>

@@ -1,3 +1,9 @@
+/**
+ * There is no description yet
+ * @class Components.Chat.IgeChatComponent
+ * @alternateClassName IgeChatComponent
+ * @extends IgeEventingClass
+ */
 var IgeChatComponent = IgeEventingClass.extend({
     classId: 'IgeChatComponent',
     componentId: 'chat',

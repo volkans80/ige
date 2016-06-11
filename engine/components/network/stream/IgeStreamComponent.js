@@ -1,5 +1,8 @@
 /**
  * Adds stream capabilities to the network system.
+ * @class Components.Network.Stream.IgeStreamComponent
+ * @alternateClassName IgeStreamComponent
+ * @extends IgeEventingClass
  */
 var IgeStreamComponent = IgeEventingClass.extend({
 	classId: 'IgeStreamComponent',

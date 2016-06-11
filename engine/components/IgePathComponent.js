@@ -1,5 +1,8 @@
 /**
  * Handles entity path traversal.
+ * @class Components.IgePathComponent
+ * @alternateClassName IgePathComponent
+ * @extends IgeEventingClass
  */
 var IgePathComponent = IgeEventingClass.extend({
 	classId: 'IgePathComponent',
@@ -228,7 +231,7 @@ var IgePathComponent = IgeEventingClass.extend({
 
 	/**
 	 * Gets the current direction.
-	 * @example #Get the direction of movement along the current path
+	 * #Get the direction of movement along the current path
 	 *     // Create an entity and add the path component
 	 *     var entity = new IgeEntity()
 	 *         .addComponent(IgePathComponent);

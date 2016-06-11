@@ -1,5 +1,8 @@
 /**
  * Creates a new tween instance.
+ * @class Core.IgeTween
+ * @alternateClassName IgeTween
+ * @extends IgeClass
  */
 var IgeTween = IgeClass.extend({
 	classId: 'IgeTween',

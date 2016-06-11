@@ -1,3 +1,11 @@
+/**
+ * @member Core.IgeFilters
+ * @param canvas
+ * @param ctx
+ * @param originalImage
+ * @param texture
+ * @param data
+ */
 IgeFilters.greyScale = function (canvas, ctx, originalImage, texture, data) {
 	// Apply the filter and then put the new pixel data
 	ctx.putImageData(
@@ -14,6 +22,12 @@ IgeFilters.greyScale = function (canvas, ctx, originalImage, texture, data) {
 	);
 };
 
+/**
+ * @member Core.IgeFilters
+ * @param imageData
+ * @returns {*}
+ * @private
+ */
 IgeFilters._greyScale = function (imageData) {
 	var arr,
 		arrCount,

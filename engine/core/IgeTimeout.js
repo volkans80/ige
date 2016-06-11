@@ -2,6 +2,9 @@
  * Provides an alternative to setTimeout() which works based on the engine's internal
  * time system allowing timeouts to fire correctly, taking into account pausing the
  * game and differences in rendering speed etc.
+ * @class Core.IgeTimeout
+ * @alternateClassName IgeTimeout
+ * @extends IgeInterval
  */
 var IgeTimeout = IgeInterval.extend({
 	classId: 'IgeTimeout',

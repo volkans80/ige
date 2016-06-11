@@ -1,3 +1,11 @@
+/**
+ * @member Core.IgeFilters
+ * @param canvas
+ * @param ctx
+ * @param originalImage
+ * @param texture
+ * @param data
+ */
 IgeFilters.invert = function (canvas, ctx, originalImage, texture, data) {
 	var w, h, canvasData, i;
 	w = canvas.width;

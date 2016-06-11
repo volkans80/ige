@@ -1,6 +1,9 @@
 /**
  * Provides a UI tooltip. Change properties (textBox, fonts, backgroundcolor)
  * at free will.
+ * @class Ui.IgeUiTooltip
+ * @alternateClassName IgeUiTooltip
+ * @extends IgeUiElement
  */
 var IgeUiTooltip = IgeUiElement.extend({
 	classId: 'IgeUiTooltip',

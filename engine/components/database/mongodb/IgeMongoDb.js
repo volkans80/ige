@@ -1,3 +1,7 @@
+/**
+ * @class Components.Database.MongoDb.IgeMongoDb
+ * @alternateClassName IgeMongoDb
+ */
 var IgeMongoDb = {
 	/**
 	 * Set the current settings for the database connection. This should

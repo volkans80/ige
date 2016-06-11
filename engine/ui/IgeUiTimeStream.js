@@ -1,3 +1,9 @@
+/**
+ * There is no description yet
+ * @class Ui.IgeUiTimeStream
+ * @alternateClassName IgeUiTimeStream
+ * @extends IgeUiElement
+ */
 var IgeUiTimeStream = IgeUiElement.extend({
 	classId: 'IgeUiTimeStream',
 

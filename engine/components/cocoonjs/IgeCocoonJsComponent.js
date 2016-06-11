@@ -1,3 +1,9 @@
+/**
+ * There is no description yet
+ * @class Components.CocoonJs.IgeCocoonJsComponent
+ * @alternateClassName IgeCocoonJsComponent
+ * @extends IgeEventingClass
+ */
 var IgeCocoonJsComponent = IgeEventingClass.extend({
 	classId: 'IgeCocoonJsComponent',
 	componentId: 'cocoonJs',

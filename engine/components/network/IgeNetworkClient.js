@@ -1,3 +1,9 @@
+/**
+ * There is no description yet
+ * @class Components.Network.IgeNetworkClient
+ * @alternateClassName IgeNetworkClient
+ * @extends IgeClass
+ */
 var IgeNetworkClient = IgeClass.extend({
 	classId: 'IgeNetworkClient',
 

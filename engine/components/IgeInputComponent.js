@@ -1,3 +1,9 @@
+/**
+ * There is no description yet
+ * @class Components.IgeInputComponent
+ * @alternateClassName IgeInputComponent
+ * @extends IgeEventingClass
+ */
 var IgeInputComponent = IgeEventingClass.extend({
 	classId: 'IgeInputComponent',
 	componentId: 'input',
@@ -673,7 +679,7 @@ var IgeInputComponent = IgeEventingClass.extend({
 	 * Emit an event by name. Overrides the IgeEventingClass emit method and
 	 * checks for propagation stopped by calling ige.input.stopPropagation().
 	 * @param {Object} eventName The name of the event to emit.
-	 * @param {Object || Array} args The arguments to send to any listening methods.
+	 * @param {Object/Array} args The arguments to send to any listening methods.
 	 * If you are sending multiple arguments, use an array containing each argument.
 	 * @return {Number}
 	 */

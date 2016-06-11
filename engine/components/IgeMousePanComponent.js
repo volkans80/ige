@@ -1,6 +1,9 @@
 /**
  * When added to a viewport, automatically adds mouse panning
  * capabilities to the viewport's camera.
+ * @class Components.IgeMousePanComponent
+ * @alternateClassName IgeMousePanComponent
+ * @extends IgeEventingClass
  */
 var IgeMousePanComponent = IgeEventingClass.extend({
 	classId: 'IgeMousePanComponent',

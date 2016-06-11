@@ -1,3 +1,9 @@
+/**
+ * There is no description yet
+ * @class Core.IgeQuest
+ * @alternateClassName IgeQuest
+ * @extends IgeEventingClass
+ */
 var IgeQuest = IgeEventingClass.extend({
 	classId: 'IgeQuest',
 

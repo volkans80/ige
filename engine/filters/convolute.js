@@ -1,7 +1,21 @@
+/**
+ * @member Core.IgeFilters
+ * @param w
+ * @param h
+ * @returns {ImageData}
+ */
 IgeFilters.createImageData = function(w,h) {
 	return IgeFilters.tmpCtx.createImageData(w,h);
 };
 
+/**
+ * @member Core.IgeFilters
+ * @param pixels
+ * @param weights
+ * @param opaque
+ * @returns {ImageData}
+ * @private
+ */
 IgeFilters._convolute = function(pixels, weights, opaque) {
 	var side = Math.round(Math.sqrt(weights.length));
 	var halfSide = Math.floor(side/2);

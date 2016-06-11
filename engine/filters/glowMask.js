@@ -1,3 +1,11 @@
+/**
+ * @member Core.IgeFilters
+ * @param canvas
+ * @param ctx
+ * @param originalImage
+ * @param texture
+ * @param data
+ */
 IgeFilters.glowMask = function (canvas, ctx, originalImage, texture, data) {
 	var oneNinth = 1 / 9,
 		pixelData,

@@ -1,9 +1,12 @@
+//TODO: Make cursor a text entry cursor on hover
 /**
  * Provides a UI text entry box. When provided with focus this UI entity will
  * capture keyboard input and display it, similar in usage to the HTML input
  * text element.
+ * @class Ui.IgeUiTextBox
+ * @alternateClassName IgeUiTextBox
+ * @extends IgeUiElement
  */
-//TODO: Make cursor a text entry cursor on hover
 var IgeUiTextBox = IgeUiElement.extend({
 	classId: 'IgeUiTextBox',
 
