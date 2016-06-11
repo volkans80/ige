@@ -1,5 +1,8 @@
 /**
  * Creates a new particle emitter.
+ * @class Core.IgeParticleEmitter
+ * @alternateClassName IgeParticleEmitter
+ * @extends IgeUiEntity
  */
 var IgeParticleEmitter = IgeUiEntity.extend({
 	classId: 'IgeParticleEmitter',

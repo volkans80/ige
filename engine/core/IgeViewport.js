@@ -1,5 +1,8 @@
 /**
  * Creates a new viewport.
+ * @class Core.IgeViewport
+ * @alternateClassName IgeViewport
+ * @extends IgeEntity
  */
 var IgeViewport = IgeEntity.extend([
 	{extension: IgeUiStyleExtension, overwrite: true},
@@ -44,8 +47,8 @@ var IgeViewport = IgeEntity.extend([
 	 * When set, if the viewport's geometry is reduced below the minimum width or
 	 * height, the viewport's camera is automatically scaled to ensure that the
 	 * minimum area remains visible in the viewport.
-	 * @param {Integer} width Width in pixels.
-	 * @param {Integer} height Height in pixels.
+	 * @param {Number} width Width in pixels.
+	 * @param {Number} height Height in pixels.
 	 * @returns {*}
 	 */
 	minimumVisibleArea: function (width, height) {
@@ -271,7 +274,7 @@ var IgeViewport = IgeEntity.extend([
 	 * This method assumes that the top-left
 	 * of the main canvas element is at 0, 0. If not you can adjust the values
 	 * yourself to allow for offset.
-	 * @example #Get the screen position of the entity
+	 * #Get the screen position of the entity
 	 *     var screenPos = entity.screenPosition();
 	 * @return {IgePoint3d} The screen position of the entity.
 	 */

@@ -1,3 +1,9 @@
+/**
+ * There is no description yet
+ * @class Ui.IgeUiAutoFlow
+ * @alternateClassName IgeUiAutoFlow
+ * @extends IgeUiElement
+ */
 var IgeUiAutoFlow = IgeUiElement.extend({
 	classId: 'IgeUiAutoFlow',
 

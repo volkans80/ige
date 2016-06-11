@@ -1,3 +1,9 @@
+/**
+ * There is no description yet
+ * @class Components.Network.NetIo.IgeNetIoComponent
+ * @alternateClassName IgeNetIoComponent
+ * @extends IgeEventingClass
+ */
 var IgeNetIoComponent = IgeEventingClass.extend([
 	{extension: IgeTimeSyncExtension, overwrite: false}
 ], {

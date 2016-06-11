@@ -1,6 +1,9 @@
 /**
  * When added to a viewport, automatically adds entity translate
  * capabilities to the selected entity in the scenegraph viewer.
+ * @class Components.Editor.IgeEditorTranslateComponent
+ * @alternateClassName IgeEditorTranslateComponent
+ * @extends IgeEventingClass
  */
 var IgeEditorTranslateComponent = IgeEventingClass.extend({
 	classId: 'IgeEditorTranslateComponent',

@@ -1,0 +1,23 @@
+{
+	"--": "../../engine",
+	"--output": "../../docs",
+	"--title": "Isogenic Game Engine",
+    "--exclude": [
+        "../../engine/components/cocoonjs",
+        "../../engine/components/physics/box2d/lib_box2d.js",
+        "../../engine/components/physics/box2d/lib_box2d.min.js",
+        "../../engine/components/physics/cannon/lib_cannon.js",
+        "../../engine/components/editor/vendor/",
+        "../../engine/components/editor/ui/",
+        "../../engine/components/network/net.io/net.io-client/",
+        "../../engine/components/network/socket.io/client/",
+        "../../engine/components/stackTrace/",
+        "../../engine/components/three/"
+    ],
+    "--welcome" : "index.html",
+    "--categories" : "categories.json",
+    "--examples-base-url" : "../examples/",
+    "--examples" : "examples.json",
+    "--videos" : "videos.json",
+    "--guides" : "guides.json"
+}

@@ -1,6 +1,9 @@
 /**
  * Creates a new sprite sheet that cuts an image up into
  * arbitrary sections.
+ * @class Core.IgeSpriteSheet
+ * @alternateClassName IgeSpriteSheet
+ * @extends IgeTexture
  */
 var IgeSpriteSheet = IgeTexture.extend({
 	classId: 'IgeSpriteSheet',

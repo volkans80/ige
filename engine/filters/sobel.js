@@ -1,3 +1,11 @@
+/**
+ * @member Core.IgeFilters
+ * @param canvas
+ * @param ctx
+ * @param originalImage
+ * @param texture
+ * @param data
+ */
 IgeFilters.sobel = function (canvas, ctx, originalImage, texture, data) {
 	var strength = 1,
 		loop;
@@ -31,6 +39,12 @@ IgeFilters.sobel = function (canvas, ctx, originalImage, texture, data) {
 	//IgeFilters._invert(canvas, ctx);
 };
 
+/**
+ * @member Core.IgeFilters
+ * @param canvas
+ * @param ctx
+ * @private
+ */
 IgeFilters._invert = function (canvas, ctx) {
 	var w, h, canvasData, i;
 	w = canvas.width;

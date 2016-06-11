@@ -2,6 +2,9 @@
  * When loaded into memory using ige.addGraph('IgeBaseScene') will create
  * the scene "baseScene" and the viewport "vp1" that are used in almost all
  * examples and can be used as the base for your scenegraph as well.
+ * @class Core.IgeBaseScene
+ * @alternateClassName IgeBaseScene
+ * @extends IgeSceneGraph
  */
 var IgeBaseScene = IgeSceneGraph.extend({
 	classId: 'IgeBaseScene',

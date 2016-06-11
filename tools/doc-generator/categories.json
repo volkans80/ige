@@ -1,0 +1,37 @@
+[
+	{
+		"name": "Classes",
+		"groups": [
+			{
+				"name": "Components",
+				"groups":[
+					{
+						"name": "Audio",
+						"classes": [
+							"Components.Audio.IgeAudio"
+						]
+					}
+				],
+				"classes": [
+					"Components.IgeAnimationComponent"
+				]
+			},
+			{
+				"name": "Core",
+				"classes": [
+					"Core.IgeClass",
+					"Core.IgeEntity",
+					"Core.IgeEventingClass",
+					"Core.IgeObject"
+				]
+			},
+			{
+				"name": "Extensions",
+				"classes": [
+					"Extensions.IgeUiPositionExtension",
+					"Extensions.IgeUiStyleExtension"
+				]
+			}
+		]
+	}
+]

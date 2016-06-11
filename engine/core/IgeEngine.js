@@ -1,10 +1,32 @@
 /**
  * The base engine class definition.
+ * @class Core.IgeEngine
+ * @alternateClassName IgeEngine
+ * @alternateClassName ige
+ * @extends IgeEntity
  */
 var IgeEngine = IgeEntity.extend({
 	classId: 'IgeEngine',
 
 	init: function () {
+
+        /**
+         * @event syncComplete
+         */
+
+        /**
+         * @event requireScriptLoading
+         * @param {String} url
+         */
+
+        /**
+         * @event allRequireScriptsLoaded
+         */
+
+        /**
+         * @event texturesLoaded
+         */
+
 		// Deal with some debug settings first
 		if (igeConfig.debug) {
 			if (!igeConfig.debug._enabled) {
@@ -133,8 +155,9 @@ var IgeEngine = IgeEntity.extend({
 	 * the object's id. If the item passed is not a string id
 	 * then the item is returned as is. If no item is passed
 	 * the engine itself is returned.
-	 * @param {String || Object} item The id of the item to return,
+	 * @param {String/Object} item The id of the item to return,
 	 * or if an object, returns the object as-is.
+     * @return {IgeEngine/Object}
 	 */
 	$: function (item) {
 		if (typeof(item) === 'string') {
@@ -151,6 +174,7 @@ var IgeEngine = IgeEntity.extend({
 	 * the passed category name.
 	 * @param {String} categoryName The name of the category to return
 	 * all objects for.
+     * @return {Object/IgeArray}
 	 */
 	$$: function (categoryName) {
 		return this._categoryRegister[categoryName] || new IgeArray();
@@ -161,6 +185,7 @@ var IgeEngine = IgeEntity.extend({
 	 * the passed group name.
 	 * @param {String} groupName The name of the group to return
 	 * all objects for.
+     * @return {Object/IgeArray}
 	 */
 	$$$: function (groupName) {
 		return this._groupRegister[groupName] || new IgeArray();
@@ -171,7 +196,7 @@ var IgeEngine = IgeEntity.extend({
 	 * register allows you to access an object by it's id with
 	 * a call to ige.$(objectId).
 	 * @param {Object} obj The object to register.
-	 * @return {*}
+	 * @return {Object[]/IgeEngine/Boolean}
 	 */
 	register: function (obj) {
 		if (obj !== undefined) {
@@ -195,7 +220,7 @@ var IgeEngine = IgeEntity.extend({
 	 * Un-register an object with the engine object register. The
 	 * object will no longer be accessible via ige.$().
 	 * @param {Object} obj The object to un-register.
-	 * @return {*}
+	 * @return {IgeEngine} this
 	 */
 	unRegister: function (obj) {
 		if (obj !== undefined) {
@@ -214,7 +239,7 @@ var IgeEngine = IgeEntity.extend({
 	 * register allows you to access an object by it's category with
 	 * a call to ige.$$(categoryName).
 	 * @param {Object} obj The object to register.
-	 * @return {*}
+	 * @return {Object[]}
 	 */
 	categoryRegister: function (obj) {
 		if (obj !== undefined) {
@@ -230,7 +255,7 @@ var IgeEngine = IgeEntity.extend({
 	 * Un-register an object with the engine category register. The
 	 * object will no longer be accessible via ige.$$().
 	 * @param {Object} obj The object to un-register.
-	 * @return {*}
+	 * @return {IgeEngine} this
 	 */
 	categoryUnRegister: function (obj) {
 		if (obj !== undefined) {
@@ -250,7 +275,7 @@ var IgeEngine = IgeEntity.extend({
 	 * @param {Object} obj The object to register.
 	 * @param {String} groupName The name of the group to register
 	 * the object in.
-	 * @return {*}
+	 * @return {Object[]}
 	 */
 	groupRegister: function (obj, groupName) {
 		if (obj !== undefined) {
@@ -268,7 +293,7 @@ var IgeEngine = IgeEntity.extend({
 	 * @param {Object} obj The object to un-register.
 	 * @param {String} groupName The name of the group to un-register
 	 * the object from.
-	 * @return {*}
+	 * @return {IgeEngine} this
 	 */
 	groupUnRegister: function (obj, groupName) {
 		if (obj !== undefined) {
@@ -290,7 +315,12 @@ var IgeEngine = IgeEntity.extend({
 
 		return this;
 	},
-	
+
+    /**
+     *
+     * @param {Function} method
+     * @param {Array} attrArr
+     */
 	sync: function (method, attrArr) {
 		if (typeof(attrArr) === 'string') {
 			attrArr = [attrArr];
@@ -305,7 +335,11 @@ var IgeEngine = IgeEntity.extend({
 			this._processSync();
 		}
 	},
-	
+
+    /**
+     * @fires syncComplete
+     * @private
+     */
 	_processSync: function () {
 		var syncEntry;
 		
@@ -333,6 +367,7 @@ var IgeEngine = IgeEntity.extend({
 	 * Load a js script file into memory via a path or url. 
 	 * @param {String} url The file's path or url.
 	 * @param {Function=} callback Optional callback when script loads.
+     * @fires requireScriptLoading
 	 */
 	requireScript: function (url, callback) {
 		if (url !== undefined) {
@@ -368,6 +403,7 @@ var IgeEngine = IgeEntity.extend({
 	 * method.
 	 * @param {Element} elem The script element added to the DOM.
 	 * @private
+     * @fires allRequireScriptsLoaded
 	 */
 	_requireScriptLoaded: function (elem) {
 		this._requireScriptLoading--;
@@ -405,7 +441,7 @@ var IgeEngine = IgeEntity.extend({
 	 * Adds a scenegraph class into memory.
 	 * @param {String} className The name of the scenegraph class.
 	 * @param {Object=} options Optional object to pass to the scenegraph class graph() method.
-	 * @returns {*}
+	 * @returns {IgeEngine} this
 	 */
 	addGraph: function (className, options) {
 		if (className !== undefined) {
@@ -438,7 +474,7 @@ var IgeEngine = IgeEntity.extend({
 	 * Removes a scenegraph class into memory.
 	 * @param {String} className The name of the scenegraph class.
 	 * @param {Object=} options Optional object to pass to the scenegraph class graph() method.
-	 * @returns {*}
+	 * @returns {IgeEngine} this
 	 */
 	removeGraph: function (className, options) {
 		if (className !== undefined) {
@@ -464,7 +500,7 @@ var IgeEngine = IgeEntity.extend({
 	 * Allows the update() methods of the entire scenegraph to
 	 * be temporarily enabled or disabled. Useful for debugging.
 	 * @param {Boolean=} val If false, will disable all update() calls. 
-	 * @returns {*}
+	 * @returns {IgeEngine/Boolean}
 	 */
 	enableUpdates: function (val) {
 		if (val !== undefined) {
@@ -479,7 +515,7 @@ var IgeEngine = IgeEntity.extend({
 	 * Allows the tick() methods of the entire scenegraph to
 	 * be temporarily enabled or disabled. Useful for debugging.
 	 * @param {Boolean=} val If false, will disable all tick() calls. 
-	 * @returns {*}
+	 * @returns {IgeEngine/Boolean}
 	 */
 	enableRenders: function (val) {
 		if (val !== undefined) {
@@ -493,7 +529,7 @@ var IgeEngine = IgeEntity.extend({
 	/**
 	 * Enables or disables the engine's debug mode. Enabled by default.
 	 * @param {Boolean=} val If true, will enable debug mode. 
-	 * @returns {*}
+	 * @returns {IgeEngine/Boolean}
 	 */
 	debugEnabled: function (val) {
 		if (val !== undefined) {
@@ -513,7 +549,7 @@ var IgeEngine = IgeEntity.extend({
 	 * but comes with a small performance penalty when enabled.
 	 * Enabled by default.
 	 * @param {Boolean=} val If true, will enable debug timing mode. 
-	 * @returns {*}
+	 * @returns {IgeEngine/Boolean}
 	 */
 	debugTiming: function (val) {
 		if (val !== undefined) {
@@ -526,20 +562,36 @@ var IgeEngine = IgeEntity.extend({
 		return igeConfig.debug._timing;
 	},
 
+    /**
+     *
+     * @param eventName
+     */
 	debug: function (eventName) {
 		if (this._debugEvents[eventName] === true || this._debugEvents[eventName] === ige._frames) {
 			debugger;
 		}
 	},
 
+    /**
+     *
+     * @param eventName
+     */
 	debugEventOn: function (eventName) {
 		this._debugEvents[eventName] = true;
 	},
 
+    /**
+     *
+     * @param eventName
+     */
 	debugEventOff: function (eventName) {
 		this._debugEvents[eventName] = false;
 	},
 
+    /**
+     *
+     * @param eventName
+     */
 	triggerDebugEventFrame: function (eventName) {
 		this._debugEvents[eventName] = ige._frames;
 	},
@@ -598,6 +650,9 @@ var IgeEngine = IgeEntity.extend({
 		}
 	},
 
+    /**
+     * @deprecated
+     */
 	showStats: function () {
 		this.log('showStats has been removed from the ige in favour of the new editor component, please remove this call from your code.');
 	},
@@ -624,7 +679,7 @@ var IgeEngine = IgeEntity.extend({
 	/**
 	 * Returns true if the class specified has been defined.
 	 * @param {String} id The ID of the class to check for.
-	 * @returns {*}
+	 * @returns {Boolean}
 	 */
 	classDefined: function (id) {
 		return Boolean(igeClassStore[id]);
@@ -636,7 +691,7 @@ var IgeEngine = IgeEntity.extend({
 	 * parameter to the new class during it's constructor call.
 	 * @param id
 	 * @param options
-	 * @return {*}
+	 * @return {Object}
 	 */
 	newClassInstance: function (id, options) {
 		return new igeClassStore[id](options);
@@ -665,7 +720,7 @@ var IgeEngine = IgeEntity.extend({
 	 * Depth-sorting viewports increases processing requirements so if you do not
 	 * need to stack viewports in a particular order, keep this flag false.
 	 * @param {Boolean} val
-	 * @return {Boolean}
+	 * @return {IgeEngine/Boolean}
 	 */
 	viewportDepth: function (val) {
 		if (val !== undefined) {
@@ -679,7 +734,7 @@ var IgeEngine = IgeEntity.extend({
 	/**
 	 * Sets the number of milliseconds before the engine gives up waiting for dependencies
 	 * to be satisfied and cancels the startup procedure.
-	 * @param val
+	 * @param {Number} val
 	 */
 	dependencyTimeout: function (val) {
 		this._dependencyCheckTimeout = val;
@@ -715,6 +770,8 @@ var IgeEngine = IgeEntity.extend({
 
 	/**
 	 * Adds one to the number of textures currently loading.
+     * @param {String} url
+     * @param {Object} textureObj
 	 */
 	textureLoadStart: function (url, textureObj) {
 		this._texturesLoading++;
@@ -728,6 +785,8 @@ var IgeEngine = IgeEntity.extend({
 	/**
 	 * Subtracts one from the number of textures currently loading and if no more need
 	 * to load, it will also call the _allTexturesLoaded() method.
+     * @param {String} url
+     * @param {Object} textureObj
 	 */
 	textureLoadEnd: function (url, textureObj) {
 		var self = this;
@@ -784,6 +843,7 @@ var IgeEngine = IgeEntity.extend({
 	/**
 	 * Emits the "texturesLoaded" event.
 	 * @private
+     * @fires texturesLoaded
 	 */
 	_allTexturesLoaded: function () {
 		if (!this._loggedATL) {
@@ -799,8 +859,8 @@ var IgeEngine = IgeEntity.extend({
 	 * Gets / sets the default smoothing value for all new
 	 * IgeTexture class instances. If set to true, all newly
 	 * created textures will have smoothing enabled by default.
-	 * @param val
-	 * @return {*}
+	 * @param {Boolean} val
+	 * @return {IgeEngine/Boolean}
 	 */
 	globalSmoothing: function (val) {
 		if (val !== undefined) {
@@ -870,7 +930,7 @@ var IgeEngine = IgeEntity.extend({
 
 	/**
 	 * Starts the engine.
-	 * @param callback
+	 * @param {Function} callback
 	 */
 	start: function (callback) {
 		if (!ige._state) {
@@ -944,8 +1004,8 @@ var IgeEngine = IgeEntity.extend({
 	 * Gets / sets the _autoSize property. If set to true, the engine will listen
 	 * for any change in screen size and resize the front-buffer (canvas) element
 	 * to match the new screen size.
-	 * @param val
-	 * @return {Boolean}
+	 * @param {Boolean} val
+	 * @return {IgeEngine/Boolean}
 	 */
 	autoSize: function (val) {
 		if (val !== undefined) {
@@ -956,6 +1016,11 @@ var IgeEngine = IgeEntity.extend({
 		return this._autoSize;
 	},
 
+    /**
+     *
+     * @param {Object} val
+     * @returns {IgeEngine/Object}
+     */
 	pixelRatioScaling: function (val) {
 		if (val !== undefined) {
 			this._pixelRatioScaling = val;
@@ -969,7 +1034,7 @@ var IgeEngine = IgeEntity.extend({
 	 * Gets / sets the rendering context that will be used when getting the
 	 * context from canvas elements.
 	 * @param {String=} contextId The context such as '2d'. Defaults to '2d'.
-	 * @return {*}
+	 * @return {IgeEngine/String}
 	 */
 	renderContext: function (contextId) {
 		if (contextId !== undefined) {
@@ -1008,6 +1073,12 @@ var IgeEngine = IgeEntity.extend({
 		}
 	},
 
+    /**
+     *
+     * @param autoSize
+     * @param dontScale
+     * @private
+     */
 	_frontBufferSetup: function (autoSize, dontScale) {
 		// Create a new canvas element to use as the
 		// rendering front-buffer
@@ -1022,9 +1093,10 @@ var IgeEngine = IgeEntity.extend({
 
 	/**
 	 * Sets the canvas element that will be used as the front-buffer.
-	 * @param elem The canvas element.
-	 * @param autoSize If set to true, the engine will automatically size
+	 * @param {Element} elem The canvas element.
+	 * @param {Boolean} autoSize If set to true, the engine will automatically size
 	 * the canvas to the width and height of the window upon window resize.
+     * @return {Object} canvas
 	 */
 	canvas: function (elem, autoSize) {
 		if (elem !== undefined) {
@@ -1116,7 +1188,7 @@ var IgeEngine = IgeEntity.extend({
 	 * Opens a new window to the specified url. When running in a
 	 * native wrapper, will load the url in place of any existing
 	 * page being displayed in the native web view.
-	 * @param url
+	 * @param {String} url
 	 */
 	openUrl: function (url) {
 		if (url !== undefined) {
@@ -1182,7 +1254,7 @@ var IgeEngine = IgeEntity.extend({
 
 	/**
 	 * Hides the web view overlay.
-	 * @return {*}
+	 * @return {IgeEngine} this
 	 */
 	hideWebView: function () {
 		if (ige.cocoonJs && ige.cocoonJs.detected) {
@@ -1200,7 +1272,7 @@ var IgeEngine = IgeEntity.extend({
 
 	/**
 	 * Evaluates javascript sent from another frame.
-	 * @param js
+	 * @param {String} js
 	 */
 	layerCall: function (js) {
 		if (js !== undefined) {
@@ -1221,6 +1293,9 @@ var IgeEngine = IgeEntity.extend({
 	 * Walks the scenegraph and returns an array of all entities that the mouse
 	 * is currently over, ordered by their draw order from drawn last (above other
 	 * entities) to first (underneath other entities).
+     * @param {Object} obj
+     * @param {Array} entArr
+     * @return {Array}
 	 */
 	mouseOverList: function (obj, entArr) {
 		var arr,
@@ -1355,7 +1430,7 @@ var IgeEngine = IgeEntity.extend({
 	/**
 	 * Gets the bounding rectangle for the HTML canvas element being
 	 * used as the front buffer for the engine. Uses DOM methods.
-	 * @returns {ClientRect}
+	 * @returns {Object} ClientRect
 	 * @private
 	 */
 	_canvasPosition: function () {
@@ -1391,7 +1466,7 @@ var IgeEngine = IgeEntity.extend({
 	 * @param {*} evalStringOrObject The expression to evaluate and
 	 * display the result of in the stats overlay, or an object that
 	 * contains a "value" property.
-	 * @returns {Integer} The index of the new watch expression you
+	 * @returns {Number} The index of the new watch expression you
 	 * just added to the watch array.
 	 */
 	watchStart: function (evalStringOrObject) {

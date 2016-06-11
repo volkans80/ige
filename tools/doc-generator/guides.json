@@ -1,0 +1,36 @@
+[
+    {
+        "title": "Isogenic Game Engine Guides",
+        "items": [
+            {
+                "name": "introduction",
+                "url": "guides/introduction",
+                "title": "Introduction",
+                "description": "Introduction"
+            },
+            {
+                "name": "installation",
+                "url": "guides/installation",
+                "title": "Installation",
+                "description": "Installation"
+            },
+            {
+                "title": "Getting Started",
+                "items": [
+                    {
+                        "name": "folder_structure",
+                        "url": "guides/folder_structure",
+                        "title": "Folder Structure",
+                        "description": "Folder Structure"
+                    },
+                    {
+                        "name": "updating_engine",
+                        "url": "guides/updating_engine",
+                        "title": "Updating The Engine",
+                        "description": "Updating The Engine"
+                    }
+                ]
+            }
+        ]
+    }
+]

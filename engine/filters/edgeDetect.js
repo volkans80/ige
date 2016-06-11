@@ -1,3 +1,11 @@
+/**
+ * @member Core.IgeFilters
+ * @param canvas
+ * @param ctx
+ * @param originalImage
+ * @param texture
+ * @param data
+ */
 IgeFilters.edgeDetect = function (canvas, ctx, originalImage, texture, data) {
 	if (!texture._filterImageDrawn || !data || !data.cumulative) {
 		ctx.clearRect(0, 0, canvas.width, canvas.height);

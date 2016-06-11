@@ -1,0 +1,1 @@
+jsduck-5.3.4.exe --config=config.json

@@ -1,3 +1,9 @@
+/**
+ * There is no description yet
+ * @class Core.IgeSceneGraph
+ * @alternateClassName IgeSceneGraph
+ * @extends IgeClass
+ */
 var IgeSceneGraph = IgeClass.extend({
 	classId: 'IgeSceneGraph',
 	interfaceImplements: [

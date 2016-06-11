@@ -1,3 +1,9 @@
+/**
+ * There is no description yet
+ * @class Core.IgeCollisionMap2d
+ * @alternateClassName IgeCollisionMap2d
+ * @extends IgeEntity
+ */
 var IgeCollisionMap2d = IgeEntity.extend({
 	classId: 'IgeCollisionMap2d',
 

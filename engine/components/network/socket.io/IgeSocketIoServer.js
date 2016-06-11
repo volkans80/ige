@@ -1,3 +1,7 @@
+/**
+ * @class Components.Network.SocketIo.IgeSocketIoServer
+ * @alternateClassName IgeSocketIoServer
+ */
 var IgeSocketIoServer = {
 	_idCounter: 0,
 	_requests: {},

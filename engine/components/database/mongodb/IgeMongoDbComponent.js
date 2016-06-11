@@ -1,3 +1,9 @@
+/**
+ * There is no description yet
+ * @class Components.Database.MongoDb.IgeMongoDbComponent
+ * @alternateClassName IgeMongoDbComponent
+ * @extends IgeEventingClass
+ */
 var IgeMongoDbComponent = IgeEventingClass.extend({
 	classId: 'IgeMongoDbComponent',
 	componentId: 'mongo',

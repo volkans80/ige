@@ -1,5 +1,8 @@
 /**
  * Creates a new 2d scene.
+ * @class Core.IgeScene2d
+ * @alternateClassName IgeScene2d
+ * @extends IgeEntity
  */
 var IgeScene2d = IgeEntity.extend({
 	classId: 'IgeScene2d',

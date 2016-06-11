@@ -1,3 +1,9 @@
+/**
+ * There is no description yet
+ * @class Components.IgeUiManagerComponent
+ * @alternateClassName IgeUiManagerComponent
+ * @extends IgeClass
+ */
 var IgeUiManagerComponent = IgeClass.extend({
 	classId: 'IgeUiManagerComponent',
 	componentId: 'ui',

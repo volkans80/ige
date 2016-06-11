@@ -1,4 +1,10 @@
 // TODO: Document this class
+/**
+ * There is no description yet
+ * @class Ui.IgeUiProgressBar
+ * @alternateClassName IgeUiProgressBar
+ * @extends IgeUiElement
+ */
 var IgeUiProgressBar = IgeUiElement.extend({
 	classId: 'IgeUiProgressBar',
 

@@ -1,5 +1,8 @@
 /**
  * Creates a new 2d polygon made up of IgePoint2d instances.
+ * @class Core.IgePoly2d
+ * @alternateClassName IgePoly2d
+ * @extends IgeClass
  */
 var IgePoly2d = IgeClass.extend({
 	classId: 'IgePoly2d',

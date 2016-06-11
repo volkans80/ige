@@ -1,5 +1,8 @@
 /**
  * Creates a new camera that will be attached to a viewport.
+ * @class Core.IgeCamera
+ * @alternateClassName IgeCamera
+ * @extends IgeEntity
  */
 var IgeCamera = IgeEntity.extend({
 	classId: 'IgeCamera',

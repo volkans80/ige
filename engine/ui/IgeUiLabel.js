@@ -1,5 +1,8 @@
 /**
  * Provides a UI label entity. Basic on-screen text label.
+ * @class Ui.IgeUiLabel
+ * @alternateClassName IgeUiLabel
+ * @extends IgeUiElement
  */
 var IgeUiLabel = IgeUiElement.extend({
 	classId: 'IgeUiLabel',

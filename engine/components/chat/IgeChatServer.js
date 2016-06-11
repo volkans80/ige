@@ -1,6 +1,8 @@
 /**
  * The server-side chat component. Handles all server-side
  * chat methods and events.
+ * @class Components.Chat.IgeChatServer
+ * @alternateClassName IgeChatServer
  */
 var IgeChatServer = {
     /**
@@ -51,7 +53,7 @@ var IgeChatServer = {
 	 * @param {String} roomId The ID of the room to send the message to.
 	 * @param {String} message The text body of the message to send.
 	 * @param {String=} to The id of the user to send the message to.
-	 * @param {String} from The id of the user that sent the message.
+	 * @param {String=} from The id of the user that sent the message.
 	 */
 	sendToRoom: function (roomId, message, to, from) {
 		var self = ige.chat;

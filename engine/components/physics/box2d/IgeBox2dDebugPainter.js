@@ -1,3 +1,9 @@
+/**
+ * There is no description yet
+ * @class Components.Physics.Box2d.IgeBox2dDebugPainter
+ * @alternateClassName IgeBox2dDebugPainter
+ * @extends IgeObject
+ */
 var IgeBox2dDebugPainter = IgeObject.extend({
 	classId: 'IgeBox2dDebugPainter',
 	

@@ -1,6 +1,8 @@
 /**
  * Provides native canvas font rendering supporting multi-line
  * text and alignment options.
+ * @class Assets.IgeFontSmartTexture
+ * @alternateClassName IgeFontSmartTexture
  */
 var IgeFontSmartTexture = {
 	measureTextWidth: function (text, entity) {

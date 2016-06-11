@@ -1,6 +1,8 @@
 /**
  * The client-side socket.io component. Handles all client-side
  * networking systems.
+ * @class Components.Network.SocketIo.IgeSocketIoClient
+ * @alternateClassName IgeSocketIoClient
  */
 var IgeSocketIoClient = {
 	_initDone: false,

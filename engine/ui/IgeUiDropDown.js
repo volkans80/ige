@@ -1,3 +1,9 @@
+/**
+ * There is no description yet
+ * @class Ui.IgeUiDropDown
+ * @alternateClassName IgeUiDropDown
+ * @extends IgeUiElement
+ */
 var IgeUiDropDown = IgeUiElement.extend({
 	classId: 'IgeUiDropDown',
 	

@@ -1,4 +1,10 @@
 // TODO: Doc this class!
+/**
+ * There is no description yet
+ * @class Components.IgeVelocityComponent
+ * @alternateClassName IgeVelocityComponent
+ * @extends IgeClass
+ */
 var IgeVelocityComponent = IgeClass.extend({
 	classId: 'IgeVelocityComponent',
 	componentId: 'velocity',

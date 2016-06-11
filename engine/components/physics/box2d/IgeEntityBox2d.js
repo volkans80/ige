@@ -1,5 +1,8 @@
 /**
  * Creates a new entity with box2d integration.
+ * @class Components.Physics.Box2d.IgeEntityBox2d
+ * @alternateClassName IgeEntityBox2d
+ * @extends IgeEntity
  */
 var IgeEntityBox2d = IgeEntity.extend({
 	classId: 'IgeEntityBox2d',

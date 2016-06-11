@@ -1,5 +1,8 @@
 /**
  * Creates a new entity with CANNON 3d physics integration.
+ * @class Components.Physics.Cannon.IgeEntityCannon
+ * @alternateClassName IgeEntityCannon
+ * @extends IgeEntity
  */
 var IgeEntityCannon = IgeEntity.extend({
 	classId: 'IgeEntityCannon',

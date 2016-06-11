@@ -1,5 +1,8 @@
 /**
  * Creates a new path node for use with the IgePathFinder class.
+ * @class Core.IgePathNode
+ * @alternateClassName IgePathNode
+ * @extends IgePoint3d
  */
 var IgePathNode = IgePoint3d.extend({
 	classId: 'IgePathNode',

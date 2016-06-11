@@ -1,3 +1,7 @@
+/**
+ * @class Assets.IgeTileMap2dSmartTexture
+ * @alternateClassName IgeTileMap2dSmartTexture
+ */
 var IgeTileMap2dSmartTexture = {
 	render: function (ctx, entity) {
 		var tileWidth = entity._tileWidth,

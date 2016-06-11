@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>The source code</title>
+  <link href="../resources/prettify/prettify.css" type="text/css" rel="stylesheet" />
+  <script type="text/javascript" src="../resources/prettify/prettify.js"></script>
+  <style type="text/css">
+    .highlight { display: block; background-color: #ddd; }
+  </style>
+  <script type="text/javascript">
+    function highlight() {
+      document.getElementById(location.hash.replace(/#/, "")).className = "highlight";
+    }
+  </script>
+</head>
+<body onload="prettyPrint(); highlight();">
+  <pre class="prettyprint lang-js"><span id='Core-IgeFilters-method-invert'>/**
+</span> * @member Core.IgeFilters
+ * @param canvas
+ * @param ctx
+ * @param originalImage
+ * @param texture
+ * @param data
+ */
+IgeFilters.invert = function (canvas, ctx, originalImage, texture, data) {
+	var w, h, canvasData, i;
+	w = canvas.width;
+	h = canvas.height;
+
+	canvasData = ctx.getImageData(0, 0, w, h);
+
+	for (i = 0; i &lt; w * h * 4; i += 4)  {
+		canvasData.data[i] = 255 - canvasData.data[i];
+		canvasData.data[i+1] = 255 - canvasData.data[i+1];
+		canvasData.data[i+2] = 255 - canvasData.data[i+2];
+	}
+
+	ctx.putImageData(canvasData, 0, 0);
+};</pre>
+</body>
+</html>

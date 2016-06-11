@@ -2,6 +2,8 @@
  * Adds client/server time sync capabilities to the network system.
  * This handles calculating the time difference between the clock
  * on the server and the clock on connected clients.
+ * @class Components.Network.IgeTimeSyncExtension
+ * @alternateClassName IgeTimeSyncExtension
  */
 var IgeTimeSyncExtension = {
 	/**

@@ -1,3 +1,9 @@
+/**
+ * There is no description yet
+ * @class Ui.IgeUiButton
+ * @alternateClassName IgeUiButton
+ * @extends IgeUiElement
+ */
 var IgeUiButton = IgeUiElement.extend({
 	classId: 'IgeUiButton',
 	

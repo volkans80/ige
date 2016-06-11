@@ -1,3 +1,9 @@
+/**
+ * There is no description yet
+ * @class Ui.IgeUiRadioButton
+ * @alternateClassName IgeUiRadioButton
+ * @extends IgeUiButton
+ */
 var IgeUiRadioButton = IgeUiButton.extend({
 	classId: 'IgeUiRadioButton',
 

@@ -1,19 +1,31 @@
-/************************/
-/* Isogenic Game Engine */
-/************************/
+//************************//
+//* Isogenic Game Engine *//
+//************************//
+/**
+ * @ignore
+ */
 ige = null;
 
-// When setting a new version please use this format:
-// v{MAJOR}.{MINOR}.{SUB}@{YYYY-MM-DD}.{REVISION}
-//
-// For example, to tag version 1.1.2 on 25th April 2013
-// as the third revision of the day:
-// v1.1.2@2013-04-25.003
+/**
+ * When setting a new version please use this format:
+ * v{MAJOR}.{MINOR}.{SUB}@{YYYY-MM-DD}.{REVISION}
+ *
+ * For example, to tag version 1.1.2 on 25th April 2013
+ * as the third revision of the day:
+ * v1.1.2@2013-04-25.003
+ * @member global
+ */
 igeVersion = 'v1.6.0@2015-04-29.001';
 
-// Define the global storage object for classes
+/**
+ * Define the global storage object for classes
+ * @member global
+ */
 igeClassStore = {};
 
+/**
+ * @member global
+ */
 igeConfig = {
 	debug: {
 		_enabled: true,
@@ -50,6 +62,7 @@ if (igeConfig.debug._node) {
 
 /**
  * Make property non-enumerable.
+ * @ignore
  */
 Object.defineProperty(Object.prototype, 'tween', {
 	enumerable:false,
@@ -66,6 +79,7 @@ Object.defineProperty(Object.prototype, 'tween', {
  * @param {Number} durationMs
  * @param {Object=} options
  * @return {IgeTween}
+ * @member prototype.Object
  */
 Object.prototype.tween = function (props, durationMs, options) {
 	var newTween = new IgeTween()
@@ -85,6 +99,7 @@ Object.prototype.tween = function (props, durationMs, options) {
 
 /**
  * Make property non-enumerable.
+ * @ignore
  */
 Object.defineProperty(Object.prototype, 'theSameAs', {
 	enumerable:false,
@@ -99,6 +114,7 @@ Object.defineProperty(Object.prototype, 'theSameAs', {
  * return true. Objects must not contain circular references!
  * @param {Object} obj The object to compare this one to.
  * @return {Boolean}
+ * @member prototype.Object
  */
 Object.prototype.theSameAs = function (obj) {
 	return JSON.stringify(this) === JSON.stringify(obj);
@@ -106,6 +122,7 @@ Object.prototype.theSameAs = function (obj) {
 
 /**
  * Make property non-enumerable.
+ * @ignore
  */
 Object.defineProperty(Array.prototype, 'clone', {
 	enumerable:false,
@@ -116,7 +133,8 @@ Object.defineProperty(Array.prototype, 'clone', {
 /**
  * Clones the array and returns a new non-referenced
  * array.
- * @return {*}
+ * @return {Array}
+ * @member prototype.Array
  */
 Array.prototype.clone = function () {
 	var i, newArray = [];
@@ -135,6 +153,7 @@ Array.prototype.clone = function () {
 
 /**
  * Make property non-enumerable.
+ * @ignore
  */
 Object.defineProperty(Array.prototype, 'pull', {
 	enumerable:false,
@@ -145,7 +164,8 @@ Object.defineProperty(Array.prototype, 'pull', {
 /**
  * Removes the passed item from an array, the opposite of push().
  * @param item
- * @return {*}
+ * @return {Number}
+ * @member prototype.Array
  */
 Array.prototype.pull = function (item) {
 	var index = this.indexOf(item);
@@ -159,6 +179,7 @@ Array.prototype.pull = function (item) {
 
 /**
  * Make property non-enumerable.
+ * @ignore
  */
 Object.defineProperty(Array.prototype, 'pushUnique', {
 	enumerable:false,
@@ -170,6 +191,7 @@ Object.defineProperty(Array.prototype, 'pushUnique', {
  * Adds an item to an array, only if it does not already exist in the array.
  * @param item
  * @return {Boolean} True if the item was added, false if it already exists.
+ * @member prototype.Array
  */
 Array.prototype.pushUnique = function (item) {
 	var index = this.indexOf(item);
@@ -183,6 +205,7 @@ Array.prototype.pushUnique = function (item) {
 
 /**
  * Make property non-enumerable.
+ * @ignore
  */
 Object.defineProperty(Array.prototype, 'each', {
 	enumerable:false,
@@ -194,6 +217,7 @@ Object.defineProperty(Array.prototype, 'each', {
  * Iterates through an array's items and calls the callback method
  * passing each item one by one.
  * @param {Function} callback
+ * @member prototype.Array
  */
 Array.prototype.each = function (callback) {
 	var len = this.length,
@@ -206,6 +230,7 @@ Array.prototype.each = function (callback) {
 
 /**
  * Make property non-enumerable.
+ * @ignore
  */
 Object.defineProperty(Array.prototype, 'eachReverse', {
 	enumerable:false,
@@ -217,6 +242,7 @@ Object.defineProperty(Array.prototype, 'eachReverse', {
  * Iterates through an array's items and calls the callback method
  * passing each item one by one in reverse order.
  * @param {Function} callback
+ * @member prototype.Array
  */
 Array.prototype.eachReverse = function (callback) {
 	var arrCount = this.length,
@@ -229,6 +255,7 @@ Array.prototype.eachReverse = function (callback) {
 
 /**
  * Make property non-enumerable.
+ * @ignore
  */
 Object.defineProperty(Array.prototype, 'destroyAll', {
 	enumerable:false,
@@ -240,6 +267,7 @@ Object.defineProperty(Array.prototype, 'destroyAll', {
  * Iterates through an array's items and calls each item's
  * destroy() method if it exists. Useful for destroying an
  * array of IgeEntity instances.
+ * @member prototype.Array
  */
 Array.prototype.destroyAll = function () {
 	var arrCount = this.length,
@@ -254,6 +282,7 @@ Array.prototype.destroyAll = function () {
 
 /**
  * Make property non-enumerable.
+ * @ignore
  */
 Object.defineProperty(Array.prototype, 'eachIsolated', {
 	enumerable:false,
@@ -268,6 +297,7 @@ Object.defineProperty(Array.prototype, 'eachIsolated', {
  * items.
  *
  * @param {Function} callback
+ * @member prototype.Array
  */
 Array.prototype.eachIsolated = function (callback) {
 	var arr = [],
@@ -289,6 +319,7 @@ Array.prototype.eachIsolated = function (callback) {
 
 /**
  * Make property non-enumerable.
+ * @ignore
  */
 Object.defineProperty(Math, 'PI180', {
 	enumerable:false,
@@ -299,11 +330,13 @@ Object.defineProperty(Math, 'PI180', {
 /**
  * Stores a pre-calculated PI / 180 value.
  * @type {Number}
+ * @member prototype.Math
  */
 Math.PI180 = Math.PI / 180;
 
 /**
  * Make property non-enumerable.
+ * @ignore
  */
 Object.defineProperty(Math, 'PI180R', {
 	enumerable:false,
@@ -314,11 +347,13 @@ Object.defineProperty(Math, 'PI180R', {
 /**
  * Stores a pre-calculated 180 / PI value.
  * @type {Number}
+ * @member prototype.Math
  */
 Math.PI180R = 180 / Math.PI;
 
 /**
  * Make property non-enumerable.
+ * @ignore
  */
 Object.defineProperty(Math, 'toIso', {
 	enumerable:false,
@@ -326,6 +361,13 @@ Object.defineProperty(Math, 'toIso', {
 	configurable:true
 });
 
+/**
+ * @member prototype.Math
+ * @param x
+ * @param y
+ * @param z
+ * @returns {{x: number, y: number}}
+ */
 Math.toIso = function (x, y, z) {
 	var sx = x - y,
 		sy = (-z) * 1.2247 + (x + y) * 0.5;
@@ -335,6 +377,7 @@ Math.toIso = function (x, y, z) {
 
 /**
  * Make property non-enumerable.
+ * @ignore
  */
 Object.defineProperty(Math, 'radians', {
 	enumerable:false,
@@ -346,6 +389,7 @@ Object.defineProperty(Math, 'radians', {
  * Converts degrees to radians.
  * @param {Number} degrees
  * @return {Number} radians
+ * @member prototype.Math
  */
 Math.radians = function (degrees) {
 	return degrees * Math.PI180;
@@ -353,6 +397,7 @@ Math.radians = function (degrees) {
 
 /**
  * Make property non-enumerable.
+ * @ignore
  */
 Object.defineProperty(Math, 'degrees', {
 	enumerable:false,
@@ -364,6 +409,7 @@ Object.defineProperty(Math, 'degrees', {
  * Converts radians to degrees.
  * @param {Number} radians
  * @return {Number} degrees
+ * @member prototype.Math
  */
 Math.degrees = function (radians) {
 	return radians * Math.PI180R;
@@ -371,6 +417,7 @@ Math.degrees = function (radians) {
 
 /**
  * Make property non-enumerable.
+ * @ignore
  */
 Object.defineProperty(Math, 'distance', {
 	enumerable:false,
@@ -385,6 +432,7 @@ Object.defineProperty(Math, 'distance', {
  * @param x2
  * @param y2
  * @return {Number}
+ * @member prototype.Math
  */
 Math.distance = function (x1, y1, x2, y2) {
 	return Math.sqrt(((x1 - x2) * (x1 - x2)) + ((y1 - y2) * (y1 - y2)));
@@ -394,6 +442,7 @@ if (typeof(CanvasRenderingContext2D) !== 'undefined') {
 	// Extend the canvas context to add some helper methods
 	/**
 	 * Make property non-enumerable.
+     * @ignore
 	 */
 	Object.defineProperty(CanvasRenderingContext2D.prototype, 'circle', {
 		enumerable:false,
@@ -413,10 +462,22 @@ if (typeof(CanvasRenderingContext2D) !== 'undefined') {
 		configurable:true
 	});
 
+    /**
+     * @member prototype.CanvasRenderingContext2D
+     * @param x
+     * @param y
+     * @param radius
+     */
 	CanvasRenderingContext2D.prototype.circle = function (x, y, radius) {
 		this.arc(x, y, radius, 0, 2 * Math.PI, false);
 	};
 
+    /**
+     * @member prototype.CanvasRenderingContext2D
+     * @param x
+     * @param y
+     * @param radius
+     */
 	CanvasRenderingContext2D.prototype.strokeCircle = function (x, y, radius) {
 		this.save();
 		this.beginPath();
@@ -425,6 +486,12 @@ if (typeof(CanvasRenderingContext2D) !== 'undefined') {
 		this.restore();
 	};
 
+    /**
+     * @member prototype.CanvasRenderingContext2D
+     * @param x
+     * @param y
+     * @param radius
+     */
 	CanvasRenderingContext2D.prototype.fillCircle = function (x, y, radius) {
 		this.save();
 		this.beginPath();
@@ -437,6 +504,7 @@ if (typeof(CanvasRenderingContext2D) !== 'undefined') {
 if (typeof(ImageData) !== 'undefined') {
 	/**
 	 * Make property non-enumerable.
+     * @ignore
 	 */
 	Object.defineProperty(ImageData.prototype, 'pixelAt', {
 		enumerable:false,
@@ -452,6 +520,7 @@ if (typeof(ImageData) !== 'undefined') {
 	 * @param {Number} y The y co-ordinate of the pixel.
 	 * @return {Object} An object containing the pixel color data in properties
 	 * {r, g, b, a}.
+     * @member prototype.ImageData
 	 */
 	ImageData.prototype.pixelAt = function (x, y) {
 		var data = this.data,
@@ -467,6 +536,7 @@ if (typeof(ImageData) !== 'undefined') {
 
 	/**
 	 * Make property non-enumerable.
+     * @ignore
 	 */
 	Object.defineProperty(ImageData.prototype, 'isTransparent', {
 		enumerable:false,
@@ -481,6 +551,7 @@ if (typeof(ImageData) !== 'undefined') {
 	 * @param {Number} x The x co-ordinate of the pixel.
 	 * @param {Number} y The y co-ordinate of the pixel.
 	 * @return {Boolean} True if fully transparent, false if not.
+     * @member prototype.ImageData
 	 */
 	ImageData.prototype.isTransparent = function (x, y) {
 		var data = this.data,
@@ -491,6 +562,7 @@ if (typeof(ImageData) !== 'undefined') {
 
 	/**
 	 * Make property non-enumerable.
+     * @ignore
 	 */
 	Object.defineProperty(ImageData.prototype, 'makeTransparent', {
 		enumerable:false,
@@ -504,6 +576,7 @@ if (typeof(ImageData) !== 'undefined') {
 	 * transparent.
 	 * @param {Number} x The x co-ordinate of the pixel.
 	 * @param {Number} y The y co-ordinate of the pixel.
+     * @member prototype.ImageData
 	 */
 	ImageData.prototype.makeTransparent = function (x, y) {
 		var data = this.data,
@@ -516,6 +589,7 @@ if (typeof(ImageData) !== 'undefined') {
 /**
  * Turn off the right-click default behaviour in the browser for the passed element.
  * @param obj
+ * @member global
  */
 var disableContextMenu = function (obj) {
 	if (obj !== null) {
@@ -527,10 +601,12 @@ var disableContextMenu = function (obj) {
 /**
  * Adds the indexOf method to all array objects if it does not already exist which
  * would you believe can still happen even in 2012!
+ * @ignore
  */
 if(!Array.prototype.indexOf){
 	/**
 	 * Make property non-enumerable.
+     * @ignore
 	 */
 	Object.defineProperty(Array.prototype, 'indexOf', {
 		enumerable:false,
@@ -542,6 +618,7 @@ if(!Array.prototype.indexOf){
 	 * Get the index of the passed item.
 	 * @param {*} obj The item to find the index for.
 	 * @return {Number} The index of the passed item or -1 if not found.
+     * @member prototype.Array
 	 */
 	Array.prototype.indexOf = function(obj) {
 		var i, l = this.length;
@@ -557,6 +634,7 @@ if(!Array.prototype.indexOf){
 if (typeof(window) !== 'undefined') {
 	/**
 	 * A cross-browser/platform requestAnimationFrame method.
+     * @ignore
 	 */
 	/*window.requestAnimFrame = (function(){
 		return function(callback, element){

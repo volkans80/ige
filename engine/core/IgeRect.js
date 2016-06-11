@@ -1,5 +1,8 @@
 /**
  * Creates a new rectangle (x, y, width, height).
+ * @class Core.IgeRect
+ * @alternateClassName IgeRect
+ * @extends IgeClass
  */
 var IgeRect = IgeClass.extend({
 	classId: 'IgeRect',

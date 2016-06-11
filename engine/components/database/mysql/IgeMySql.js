@@ -1,3 +1,7 @@
+/**
+ * @class Components.Database.MySql.IgeMySql
+ * @alternateClassName IgeMySql
+ */
 var IgeMySql = {
 	/**
 	 * Set the current settings for the database connection. This should

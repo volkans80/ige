@@ -1,3 +1,9 @@
+/**
+ * There is no description yet
+ * @class Ui.IgeUiGridPanel
+ * @alternateClassName IgeUiGridPanel
+ * @extends IgeUiElement
+ */
 var IgeUiGridPanel = IgeUiElement.extend({
 	classId: 'IgeUiGridPanel',
 

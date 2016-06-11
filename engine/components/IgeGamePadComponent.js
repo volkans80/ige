@@ -1,3 +1,9 @@
+/**
+ * There is no description yet
+ * @class Components.IgeGamePadComponent
+ * @alternateClassName IgeGamePadComponent
+ * @extends IgeEventingClass
+ */
 var IgeGamePadComponent = IgeEventingClass.extend({
 	classId: 'IgeGamePadComponent',
 	componentId: 'gamePad',

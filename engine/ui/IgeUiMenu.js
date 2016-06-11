@@ -1,5 +1,8 @@
 /**
  * Provides a UI drop-down menu entity.
+ * @class Ui.IgeUiMenu
+ * @alternateClassName IgeUiMenu
+ * @extends IgeUiElement
  */
 var IgeUiMenu = IgeUiElement.extend({
 	classId: 'IgeUiMenu',
@@ -31,21 +34,6 @@ var IgeUiMenu = IgeUiElement.extend({
 		}
 
 		return this._menuMode;
-	},
-
-	/**
-	 * Gets / sets the font sheet (texture) that the text box will
-	 * use when rendering text inside the box.
-	 * @param fontSheet
-	 * @return {*}
-	 */
-	fontSheet: function (fontSheet) {
-		if (fontSheet !== undefined) {
-			this._fontSheet = fontSheet;
-			return this;
-		}
-
-		return this._fontSheet;
 	},
 
 	addItem: function (item) {
@@ -112,20 +100,20 @@ var IgeUiMenuItem = IgeUiElement.extend({
 		return this._menuData;
 	},
 
-	/**
-	 * Gets / sets the font sheet (texture) that the menu item will
-	 * use when rendering text.
-	 * @param fontSheet
-	 * @return {*}
-	 */
-	fontSheet: function (fontSheet) {
-		if (fontSheet !== undefined) {
-			this._fontSheet = fontSheet;
-			return this;
-		}
+    /**
+     * Gets / sets the font sheet (texture) that the text box will
+     * use when rendering text inside the box.
+     * @param fontSheet
+     * @return {*}
+     */
+    fontSheet: function (fontSheet) {
+        if (fontSheet !== undefined) {
+            this._fontSheet = fontSheet;
+            return this;
+        }
 
-		return this._fontSheet;
-	},
+        return this._fontSheet;
+    },
 
 	/**
 	 * Opens the menu item so it's child items are visible.

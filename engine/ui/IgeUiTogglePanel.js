@@ -1,3 +1,9 @@
+/**
+ * There is no description yet
+ * @class Ui.IgeUiTogglePanel
+ * @alternateClassName IgeUiTogglePanel
+ * @extends IgeUiElement
+ */
 var IgeUiTogglePanel = IgeUiElement.extend({
 	classId: 'IgeUiTogglePanel',
 

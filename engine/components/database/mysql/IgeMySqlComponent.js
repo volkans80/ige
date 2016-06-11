@@ -1,3 +1,9 @@
+/**
+ * There is no description yet
+ * @class Components.Database.MySql.IgeMySqlComponent
+ * @alternateClassName IgeMySqlComponent
+ * @extends IgeEventingClass
+ */
 var IgeMySqlComponent = IgeEventingClass.extend({
 	classId: 'IgeMySqlComponent',
 	componentId: 'mysql',

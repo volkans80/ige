@@ -3,6 +3,9 @@
  * than standard IgeEntity instances but provide a rich set of extra
  * positioning and styling methods as well as reacting to styles
  * defined using the IgeUiManagerComponent.
+ * @class Core.IgeUiElement
+ * @alternateClassName IgeUiElement
+ * @extends IgeUiEntity
  */
 var IgeUiElement = IgeUiEntity.extend({
 	classId: 'IgeUiElement',
@@ -182,13 +185,13 @@ var IgeUiElement = IgeUiEntity.extend({
 	 * is passed to the "padding()" method as arguments, which is the same
 	 * as calling "padding(10, 10, 10, 10);".
 	 * 
-	 * @example #Apply a background color
+	 * #Apply a background color
 	 *     var elem = new IgeUiElement()
 	 *         .applyStyle({
 	 *             'backgroundColor': '#ffffff' // Set background color to white
 	 *         });
 	 *         
-	 * @example #Apply padding with multiple arguments
+	 * #Apply padding with multiple arguments
 	 *     var elem = new IgeUiElement()
 	 *         .applyStyle({
 	 *             'padding': [10, 10, 10, 10] // Set padding using multiple values

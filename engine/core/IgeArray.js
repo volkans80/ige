@@ -1,3 +1,7 @@
+/**
+ * @class Core.IgeArray
+ * @alternateClassName IgeArray
+ */
 var IgeArray = function () {};
 IgeArray.prototype = [];
 

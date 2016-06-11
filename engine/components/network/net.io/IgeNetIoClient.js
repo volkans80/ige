@@ -1,6 +1,8 @@
 /**
  * The client-side net.io component. Handles all client-side
  * networking systems.
+ * @class Components.Network.NetIo.IgeNetIoClient
+ * @alternateClassName IgeNetIoClient
  */
 var IgeNetIoClient = {
 	version: '1.0.0',
