@@ -30,13 +30,13 @@ var IgeClass = (function () {
 <span id='Core-IgeClass-method-log'>		/**
 </span>         * @method log
 		 * Provides logging capabilities to all IgeClass instances.
-         * #Log a message
+         * ##Log a message
          *     var entity = new IgeEntity();
          *
          *     // Will output:
          *     //     IGE *log* [IgeEntity] : hello
          *     entity.log('Hello');
-         * #Log an info message with an optional parameter
+         * ##Log an info message with an optional parameter
          *     var entity = new IgeEntity(),
          *         param = 'moo';
          *
@@ -44,7 +44,7 @@ var IgeClass = (function () {
          *     //    moo
          *     //    IGE *log* [IgeEntity] : hello
          *     entity.log('Hello', 'info', param);
-         * #Log a warning message (which will cause a stack trace to be shown)
+         * ##Log a warning message (which will cause a stack trace to be shown)
          *     var entity = new IgeEntity();
          *
          *     // Will output (stack trace is just an example here, real one will be more useful):
@@ -54,7 +54,7 @@ var IgeClass = (function () {
          *     //    ---- Object.InjectedScript.evaluate (&lt;anonymous&gt;:339:21)
          *     //    IGE *warning* [IgeEntity] : A test warning
          *     entity.log('A test warning', 'warning');
-         * #Log an error message (which will cause an exception to be raised and a stack trace to be shown)
+         * ##Log an error message (which will cause an exception to be raised and a stack trace to be shown)
          *     var entity = new IgeEntity();
          *
          *     // Will output (stack trace is just an example here, real one will be more useful):
@@ -132,7 +132,7 @@ var IgeClass = (function () {
 		 * what class an instance was instantiated with and is also
 		 * output during the ige.scenegraph() method's console logging
 		 * to show what class an object belongs to.
-		 * #Get the class id of an object
+		 * ##Get the class id of an object
 		 *     var entity = new IgeEntity();
 		 *	
 		 *     // Will output &quot;IgeEntity&quot;
@@ -150,7 +150,7 @@ var IgeClass = (function () {
 		 * The new component instance is then added to &quot;this&quot; via
 		 * a property name that is defined in the component class as
 		 * &quot;componentId&quot;.
-         * #Add the velocity component to an entity
+         * ##Add the velocity component to an entity
          *     var entity = new IgeEntity();
          *     entity.addComponent(IgeVelocityComponent);
          *
@@ -177,7 +177,7 @@ var IgeClass = (function () {
 <span id='Core-IgeClass-method-removeComponent'>		/**
 </span>         * @method removeComponent
 		 * Removes a component by it's id.
-         * #Remove a component by it's id (namespace)
+         * ##Remove a component by it's id (namespace)
          *     var entity = new IgeEntity();
          *
          *     // Let's add the velocity component
@@ -212,7 +212,7 @@ var IgeClass = (function () {
 		 * only properties and methods that don't already exists in
 		 * &quot;this&quot; will be copied. If overwrite is true, they will be
 		 * copied regardless.
-         * #Implement all the methods of an object into another object
+         * ##Implement all the methods of an object into another object
          *     // Create a couple of test entities with ids
          *     var entity1 = new IgeEntity().id('entity1'),
          *         entity2 = new IgeEntity().id('entity2');
@@ -268,11 +268,11 @@ var IgeClass = (function () {
 </span>         * @method data
 		 * Gets / sets a key / value pair in the object's data object. Useful for
 		 * storing arbitrary game data in the object.
-         * #Set some arbitrary data key value pair
+         * ##Set some arbitrary data key value pair
          *     var entity = new IgeEntity();
          *     entity.data('playerScore', 100);
          *     entity.data('playerName', 'iRock');
-         * #Get the value of a data key
+         * ##Get the value of a data key
          *     console.log(entity.data('playerScore'));
          *     console.log(entity.data('playerName'));
 		 * @param {String} key The key under which the data resides.
@@ -298,7 +298,7 @@ var IgeClass = (function () {
 
 <span id='Core-IgeClass-method-extend'>	/**
 </span>	 * Create a new IgeClass that inherits from this class
-	 * #Creating a new class by extending an existing one
+	 * ##Creating a new class by extending an existing one
 	 *     var NewClass = IgeClass.extend({
 	 *         // Init is your constructor
 	 *         init: function () {

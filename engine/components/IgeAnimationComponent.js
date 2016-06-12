@@ -94,7 +94,7 @@ var IgeAnimationComponent = IgeEventingClass.extend({
 	 * frames per second to animate at and if the animation
 	 * should loop and if so, how many times.
      *
-     *     #Define an animation
+     * ##Define an animation
      *     // Create an entity, add the animation component and define
      *     // an animation using frames 1, 2, 3 and 4, with an FPS of
      *     // 25 and looping forever (-1)
@@ -216,7 +216,7 @@ var IgeAnimationComponent = IgeEventingClass.extend({
 	/**
 	 * Sets the specified animation's FPS.
      *
-     *     #Set the specified animation's FPS
+     * ##Set the specified animation's FPS
      *     // Create an entity, add the animation component and define
      *     // an animation with an FPS of 25
      *     var entity = new IgeEntity()
@@ -246,7 +246,7 @@ var IgeAnimationComponent = IgeEventingClass.extend({
 	/**
 	 * Sets all the animations assigned to an entity to the specified FPS.
      *
-     *     #Set all entity animations to specified FPS
+     * ##Set all entity animations to specified FPS
      *     // Create an entity, add the animation component and define
      *     // a couple of animations with an FPS of 25
      *     var entity = new IgeEntity()
@@ -285,7 +285,7 @@ var IgeAnimationComponent = IgeEventingClass.extend({
 	/**
 	 * Starts an animation from the beginning frame.
 	 *
-     * #Start an animation
+     * ##Start an animation
 	 *     // Create an entity, add the animation component, define
 	 *     // an animation and then start it
 	 *     var entity = new IgeEntity()
@@ -294,7 +294,7 @@ var IgeAnimationComponent = IgeEventingClass.extend({
 	 *         
 	 *     entity.animation.start('anim1');
 	 *     
-	 * #Start an animation with callbacks for animation events
+	 * ##Start an animation with callbacks for animation events
 	 *     // Create an entity, add the animation component, define
 	 *     // an animation and then start it
 	 *     var entity = new IgeEntity()
@@ -318,7 +318,7 @@ var IgeAnimationComponent = IgeEventingClass.extend({
 	 *     		}
 	 *     });
 	 *     
-	 * #Start an animation with callbacks for animation events via event listeners
+	 * ##Start an animation with callbacks for animation events via event listeners
 	 *     // Create an entity, add the animation component, define
 	 *     // an animation and then start it
 	 *     var entity = new IgeEntity()
@@ -387,7 +387,7 @@ var IgeAnimationComponent = IgeEventingClass.extend({
 	 * Starts an animation only if the passed animation is not already
 	 * started.
      *
-	 * #Select an animation
+	 * ##Select an animation
 	 *     // Create an entity, add the animation component, define
 	 *     // an animation and then select it
 	 *     var entity = new IgeEntity()
@@ -415,7 +415,7 @@ var IgeAnimationComponent = IgeEventingClass.extend({
 
 	/**
 	 * Stops the current animation.
-	 * #Stop the current animation
+	 * ##Stop the current animation
 	 *     entity.animation.stop();
 	 * @return {*}
 	 */

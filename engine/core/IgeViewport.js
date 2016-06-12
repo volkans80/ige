@@ -274,7 +274,7 @@ var IgeViewport = IgeEntity.extend([
 	 * This method assumes that the top-left
 	 * of the main canvas element is at 0, 0. If not you can adjust the values
 	 * yourself to allow for offset.
-	 * #Get the screen position of the entity
+	 * ##Get the screen position of the entity
 	 *     var screenPos = entity.screenPosition();
 	 * @return {IgePoint3d} The screen position of the entity.
 	 */

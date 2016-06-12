@@ -185,13 +185,13 @@ var IgeUiElement = IgeUiEntity.extend({
 	 * is passed to the "padding()" method as arguments, which is the same
 	 * as calling "padding(10, 10, 10, 10);".
 	 * 
-	 * #Apply a background color
+	 * ##Apply a background color
 	 *     var elem = new IgeUiElement()
 	 *         .applyStyle({
 	 *             'backgroundColor': '#ffffff' // Set background color to white
 	 *         });
 	 *         
-	 * #Apply padding with multiple arguments
+	 * ##Apply padding with multiple arguments
 	 *     var elem = new IgeUiElement()
 	 *         .applyStyle({
 	 *             'padding': [10, 10, 10, 10] // Set padding using multiple values

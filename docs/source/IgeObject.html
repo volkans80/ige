@@ -57,10 +57,10 @@ var IgeObject = IgeEventingClass.extend({
 	 * destroy() method is called. Useful for checking if
 	 * an object that you are holding a reference to has been
 	 * destroyed.
-     * #Get the alive flag value
+     * ##Get the alive flag value
      *     var entity = new IgeEntity();
      *     console.log(entity.alive());
-     * #Set the alive flag value
+     * ##Set the alive flag value
      *     var entity = new IgeEntity();
      *     entity.alive(true);
 	 * @param {Boolean=} val The value to set the alive flag
@@ -104,13 +104,13 @@ var IgeObject = IgeEventingClass.extend({
 </span>	 * Gets / sets the current object id. If no id is currently assigned and no
 	 * id is passed to the method, it will automatically generate and assign a
 	 * new id as a 16 character hexadecimal value typed as a string.
-     * #Get the id of an entity
+     * ##Get the id of an entity
      *     var entity = new IgeEntity();
      *     console.log(entity.id());
-     * #Set the id of an entity
+     * ##Set the id of an entity
      *     var entity = new IgeEntity();
      *     entity.id('myNewId');
-     * #Set the id of an entity via chaining
+     * ##Set the id of an entity via chaining
      *     var entity = new IgeEntity()
      *         .id('myNewId');
 	 * @param {String=} id
@@ -158,16 +158,16 @@ var IgeObject = IgeEventingClass.extend({
 
 <span id='Core-IgeObject-method-category'>	/**
 </span>	 * Gets / sets the arbitrary category name that the object belongs to.
-	 * #Get the category of an entity
+     * ##Get the category of an entity
 	 *     var entity = new IgeEntity();
 	 *     console.log(entity.category());
-	 * #Set the category of an entity
+	 * ##Set the category of an entity
 	 *     var entity = new IgeEntity();
 	 *     entity.category('myNewCategory');
-	 * #Set the category of an entity via chaining
+	 * ##Set the category of an entity via chaining
 	 *     var entity = new IgeEntity()
 	 *         .category('myNewCategory');
-	 * #Get all the entities belonging to a category
+	 * ##Get all the entities belonging to a category
 	 *     var entityArray = ige.$$('categoryName');
 	 * #Remove the category of an entity
 	 *     // Set category to some name
@@ -222,16 +222,16 @@ var IgeObject = IgeEventingClass.extend({
 <span id='Core-IgeObject-method-addGroup'>	/**
 </span>	 * Adds this entity to a group or groups passed as
 	 * arguments.
-	 * #Add entity to a single group
+	 * ##Add entity to a single group
 	 *     var entity = new IgeEntity();
 	 *     entity.addGroup('g1');
-	 * #Add entity to multiple groups
+	 * ##Add entity to multiple groups
 	 *     var entity = new IgeEntity();
 	 *     entity.addGroup('g1', 'g2', 'g3');
-	 * #Add entity to multiple groups via an array
+	 * ##Add entity to multiple groups via an array
 	 *     var entity = new IgeEntity();
 	 *     entity.addGroup(['g1', 'g2', 'g3']);
-	 * #Add entity to multiple groups via multiple arrays
+	 * ##Add entity to multiple groups via multiple arrays
 	 *     var entity = new IgeEntity();
 	 *     entity.addGroup(['g1', 'g2', 'g3'], ['g4', 'g5']);
      * @param {String/String[]} groupName A group or array of group names
@@ -277,7 +277,7 @@ var IgeObject = IgeEventingClass.extend({
 <span id='Core-IgeObject-method-inGroup'>	/**
 </span>	 * Checks if the entity is in the group or array of group
 	 * names passed.
-	 * #Check if the entity is in a group
+	 * ##Check if the entity is in a group
 	 *     var entity = new IgeEntity();
 	 *     entity.addGroup('g1', 'g2');
 	 *	
@@ -286,7 +286,7 @@ var IgeObject = IgeEventingClass.extend({
 	 *	
 	 *     // Will output false since entity is not part of g3 group
 	 *     console.log(entity.inGroup('g3', false);
-	 * #Check if the entity is in an array of groups using ANY and ALL options
+	 * ##Check if the entity is in an array of groups using ANY and ALL options
 	 *     var entity = new IgeEntity();
 	 *     entity.addGroup('g1', 'g2');
 	 *     
@@ -318,7 +318,7 @@ var IgeObject = IgeEventingClass.extend({
 	 * array of groups. If multiple group names are passed,
 	 * as an array the method will only return true if the
 	 * entity is in ALL the passed groups.
-	 * #Check if entity belongs to all of the passed groups
+	 * ##Check if entity belongs to all of the passed groups
 	 *     // Add a couple of groups
 	 *     var entity = new IgeEntity();
 	 *     entity.addGroup(['g1', 'g2']);
@@ -362,7 +362,7 @@ var IgeObject = IgeEventingClass.extend({
 	 * array of group names. If multiple group names are passed
 	 * as an array, the method will return true if the entity
 	 * is in ANY of the the passed groups.
-	 * #Check if entity belongs to any of the passed groups
+	 * ##Check if entity belongs to any of the passed groups
 	 *     // Add a couple of groups
 	 *     var entity = new IgeEntity();
 	 *     entity.addGroup('g1', 'g2');
@@ -400,7 +400,7 @@ var IgeObject = IgeEventingClass.extend({
 
 <span id='Core-IgeObject-method-groups'>	/**
 </span>	 * Gets an array of all groups this entity belongs to.
-	 * #Get array of groups entity belongs to
+	 * ##Get array of groups entity belongs to
 	 *     var entity = new IgeEntity();
 	 *     entity.addGroup('g1', 'g2');
 	 *	
@@ -414,7 +414,7 @@ var IgeObject = IgeEventingClass.extend({
 
 <span id='Core-IgeObject-method-groupCount'>	/**
 </span>	 * Gets the number of groups this entity belongs to.
-	 * #Get number of groups entity belongs to
+	 * ##Get number of groups entity belongs to
 	 *     var entity = new IgeEntity();
 	 *     entity.addGroup('g1', 'g2');
 	 *	
@@ -430,7 +430,7 @@ var IgeObject = IgeEventingClass.extend({
 </span>	 * Removes the entity from the group or groups passed. This
 	 * method accepts multiple arguments and will remove the entity
 	 * from all groups passed as arguments.
-	 * #Remove entity from single group
+	 * ##Remove entity from single group
 	 *     var entity = new IgeEntity();
 	 *     entity.addGroup('g1', 'g2');
 	 *	
@@ -442,7 +442,7 @@ var IgeObject = IgeEventingClass.extend({
 	 *	
 	 *     // This will output &quot;['g2']&quot;
 	 *     console.log(entity.groups());
-	 * #Remove entity from multiple groups
+	 * ##Remove entity from multiple groups
 	 *     var entity = new IgeEntity();
 	 *     entity.addGroup('g1', 'g3', 'g2');
 	 *	
@@ -454,7 +454,7 @@ var IgeObject = IgeEventingClass.extend({
 	 *	
 	 *     // This will output &quot;['g2']&quot;
 	 *     console.log(entity.groups());
-	 * #Remove entity from multiple groups via an array
+	 * ##Remove entity from multiple groups via an array
 	 *     var entity = new IgeEntity();
 	 *     entity.addGroup('g1', 'g3', 'g2');
 	 *	
@@ -466,7 +466,7 @@ var IgeObject = IgeEventingClass.extend({
 	 *	
 	 *     // This will output &quot;['g2']&quot;
 	 *     console.log(entity.groups());
-	 * #Remove entity from multiple groups via multiple arrays
+	 * ##Remove entity from multiple groups via multiple arrays
 	 *     var entity = new IgeEntity();
 	 *     entity.addGroup('g1', 'g2', 'g3', 'g4', 'g5', 'g6', 'g7');
 	 *	
@@ -514,7 +514,7 @@ var IgeObject = IgeEventingClass.extend({
 
 <span id='Core-IgeObject-method-removeAllGroups'>	/**
 </span>	 * Removes the entity from all groups it is a member of.
-	 * #Remove entity from all groups
+	 * ##Remove entity from all groups
 	 *     var entity = new IgeEntity();
 	 *     entity.addGroup('g1', 'g3', 'g2');
 	 *	
@@ -545,7 +545,7 @@ var IgeObject = IgeEventingClass.extend({
 
 <span id='Core-IgeObject-method-addBehaviour'>	/**
 </span>	 * Adds a behaviour to the object's active behaviour list.
-	 * #Add a behaviour with the id &quot;myBehaviour&quot;
+	 * ##Add a behaviour with the id &quot;myBehaviour&quot;
 	 *     var entity = new IgeEntity();
 	 *     entity.addBehaviour('myBehaviour', function () {
 	 *         // Code here will execute during each engine update for
@@ -594,7 +594,7 @@ var IgeObject = IgeEventingClass.extend({
 
 <span id='Core-IgeObject-method-removeBehaviour'>	/**
 </span>	 * Removes a behaviour to the object's active behaviour list by it's id.
-	 * #Remove a behaviour with the id &quot;myBehaviour&quot;
+	 * ##Remove a behaviour with the id &quot;myBehaviour&quot;
 	 *     var entity = new IgeEntity();
 	 *     entity.addBehaviour('myBehaviour', function () {
 	 *         // Code here will execute during each engine update for
@@ -640,7 +640,7 @@ var IgeObject = IgeEventingClass.extend({
 
 <span id='Core-IgeObject-method-hasBehaviour'>	/**
 </span>	 * Checks if the object has the specified behaviour already added to it.
-	 * #Check for a behaviour with the id &quot;myBehaviour&quot;
+	 * ##Check for a behaviour with the id &quot;myBehaviour&quot;
 	 *     var entity = new IgeEntity();
 	 *     entity.addBehaviour('myBehaviour', function () {
 	 *         // Code here will execute during each engine update for
@@ -687,13 +687,13 @@ var IgeObject = IgeEventingClass.extend({
 	 * it's bounds drawn when the bounds for all objects are being drawn.
 	 * In order for bounds to be drawn the viewport the object is being drawn
 	 * to must also have draw bounds enabled.
-	 * #Enable draw bounds
+	 * ##Enable draw bounds
 	 *     var entity = new IgeEntity();
 	 *     entity.drawBounds(true);
-	 * #Disable draw bounds
+	 * ##Disable draw bounds
 	 *     var entity = new IgeEntity();
 	 *     entity.drawBounds(false);
-	 * #Get the current flag value
+	 * ##Get the current flag value
 	 *     console.log(entity.drawBounds());
      * @param {Boolean} val
 	 * @return {IgeObject/Boolean}
@@ -711,13 +711,13 @@ var IgeObject = IgeEventingClass.extend({
 </span>	 * Gets / sets the boolean flag determining if this object should have
 	 * it's bounds data drawn when the bounds for all objects are being drawn.
 	 * Bounds data includes the object ID and it's current depth etc.
-	 * #Enable draw bounds data
+	 * ##Enable draw bounds data
 	 *     var entity = new IgeEntity();
 	 *     entity.drawBoundsData(true);
-	 * #Disable draw bounds data
+	 * ##Disable draw bounds data
 	 *     var entity = new IgeEntity();
 	 *     entity.drawBoundsData(false);
-	 * #Get the current flag value
+	 * ##Get the current flag value
 	 *     console.log(entity.drawBoundsData());
      * @param {Boolean} val
 	 * @return {IgeObject/Boolean}
@@ -734,13 +734,13 @@ var IgeObject = IgeEventingClass.extend({
 <span id='Core-IgeObject-method-drawMouse'>	/**
 </span>	 * Gets / sets the boolean flag determining if this object should have
 	 * it's mouse position drawn, usually for debug purposes.
-	 * #Enable draw mouse position data
+	 * ##Enable draw mouse position data
 	 *     var entity = new IgeEntity();
 	 *     entity.drawMouse(true);
-	 * #Disable draw mouse position data
+	 * ##Disable draw mouse position data
 	 *     var entity = new IgeEntity();
 	 *     entity.drawMouse(false);
-	 * #Get the current flag value
+	 * ##Get the current flag value
 	 *     console.log(entity.drawMouse());
      * @param {Boolean=} val
 	 * @return {IgeObject/Boolean}
@@ -759,13 +759,13 @@ var IgeObject = IgeEventingClass.extend({
 	 * it's extra mouse data drawn for debug purposes. For instance, on tilemaps
 	 * (IgeTileMap2d) instances, when enabled you will see the tile x and y
 	 * co-ordinates currently being hoverered over by the mouse.
-	 * #Enable draw mouse data
+	 * ##Enable draw mouse data
 	 *     var entity = new IgeEntity();
 	 *     entity.drawMouseData(true);
-	 * #Disable draw mouse data
+	 * ##Disable draw mouse data
 	 *     var entity = new IgeEntity();
 	 *     entity.drawMouseData(false);
-	 * #Get the current flag value
+	 * ##Get the current flag value
 	 *     console.log(entity.drawMouseData());
      * @param {Boolean=} val
 	 * @return {IgeObject/Boolean}
@@ -835,7 +835,7 @@ var IgeObject = IgeEventingClass.extend({
 <span id='Core-IgeObject-method-parent'>	/**
 </span>	 * Returns the object's parent object (the object that
 	 * it is mounted to).
-	 * #Get the object parent
+	 * ##Get the object parent
 	 *     // Create a couple of entities and give them ids
 	 *     var entity1 = new IgeEntity().id('entity1'),
 	 *         entity2 = new IgeEntity().id('entity2');
@@ -871,7 +871,7 @@ var IgeObject = IgeEventingClass.extend({
 
 <span id='Core-IgeObject-method-children'>	/**
 </span>	 * Returns the object's children as an array of objects.
-	 * #Get the child objects array
+	 * ##Get the child objects array
 	 *     // Create a couple of entities and give them ids
 	 *     var entity1 = new IgeEntity().id('entity1'),
 	 *         entity2 = new IgeEntity().id('entity2');
@@ -892,7 +892,7 @@ var IgeObject = IgeEventingClass.extend({
 
 <span id='Core-IgeObject-method-mount'>	/**
 </span>	 * Mounts this object to the passed object in the scenegraph.
-	 * #Mount an entity to another entity
+	 * ##Mount an entity to another entity
 	 *     // Create a couple of entities and give them ids
 	 *     var entity1 = new IgeEntity().id('entity1'),
 	 *         entity2 = new IgeEntity().id('entity2');
@@ -971,7 +971,7 @@ var IgeObject = IgeEventingClass.extend({
 
 <span id='Core-IgeObject-method-unMount'>	/**
 </span>	 * Unmounts this object from it's parent object in the scenegraph.
-	 * #Unmount an entity from another entity
+	 * ##Unmount an entity from another entity
 	 *     // Create a couple of entities and give them ids
 	 *     var entity1 = new IgeEntity().id('entity1'),
 	 *         entity2 = new IgeEntity().id('entity2');
@@ -1063,10 +1063,10 @@ var IgeObject = IgeEventingClass.extend({
 
 <span id='Core-IgeObject-method-mode'>	/**
 </span>	 * Gets / sets the positioning mode of the entity.
-	 * #Set the positioning mode to 2d
+	 * ##Set the positioning mode to 2d
 	 *     var entity = new IgeEntity()
 	 *         .mode(0);
-	 * #Set the positioning mode to isometric
+	 * ##Set the positioning mode to isometric
 	 *     var entity = new IgeEntity()
 	 *         .mode(1);
      * @param {Number=} val 0 = 2d, 1 = isometric
@@ -1084,10 +1084,10 @@ var IgeObject = IgeEventingClass.extend({
 <span id='Core-IgeObject-method-isometric'>	/**
 </span>	 * Gets / sets if this object should be positioned isometrically
 	 * or in 2d.
-	 * #Set the positioning mode to isometric
+	 * ##Set the positioning mode to isometric
 	 *     var entity = new IgeEntity()
 	 *         .isometric(true);
-	 * #Set the positioning mode to 2d
+	 * ##Set the positioning mode to 2d
 	 *     var entity = new IgeEntity()
 	 *         .isometric(false);
      * @param {Boolean} val Set to true to position this object in
@@ -1111,10 +1111,10 @@ var IgeObject = IgeEventingClass.extend({
 <span id='Core-IgeObject-method-isometricMounts'>	/**
 </span>	 * Gets / sets if objects mounted to this object should be positioned
 	 * and depth-sorted in an isometric fashion or a 2d fashion.
-	 * #Set children to be positioned and depth sorted in 2d
+	 * ##Set children to be positioned and depth sorted in 2d
 	 *     var entity = new IgeEntity()
 	 *         .isometricMounts(false);
-	 * #Set children to be positioned and depth sorted in isometric
+	 * ##Set children to be positioned and depth sorted in isometric
 	 *     var entity = new IgeEntity()
 	 *         .isometricMounts(true);
      * @param {Boolean=} val Set to true to enabled isometric positioning
@@ -1140,13 +1140,13 @@ var IgeObject = IgeEventingClass.extend({
 <span id='Core-IgeObject-method-indestructible'>	/**
 </span>	 * Gets / sets the indestructible flag. If set to true, the object will
 	 * not be destroyed even if a call to the destroy() method is made.
-	 * #Set an entity to indestructible
+	 * ##Set an entity to indestructible
 	 *     var entity = new IgeEntity()
 	 *         .indestructible(true);
-	 * #Set an entity to destructible
+	 * ##Set an entity to destructible
 	 *     var entity = new IgeEntity()
 	 *         .indestructible(false);
-	 * #Get an entity's indestructible flag value
+	 * ##Get an entity's indestructible flag value
 	 *     var entity = new IgeEntity()
 	 *     console.log(entity.indestructible());
      * @param {Number=} val
@@ -1166,13 +1166,13 @@ var IgeObject = IgeEventingClass.extend({
 	 * against other entities of the same parent. Please note that entities are first sorted
 	 * by their layer and then by their depth, and only entities of the same layer will be
 	 * sorted against each other by their depth values.
-	 * #Set an entity's layer to 22
+	 * ##Set an entity's layer to 22
 	 *     var entity = new IgeEntity()
 	 *         .layer(22);
-	 * #Get an entity's layer value
+	 * ##Get an entity's layer value
 	 *     var entity = new IgeEntity()
 	 *     console.log(entity.layer());
-	 * #How layers and depths are handled together
+	 * ##How layers and depths are handled together
 	 *     var entity1 = new IgeEntity(),
 	 *         entity2 = new IgeEntity(),
 	 *         entity3 = new IgeEntity();
@@ -1217,13 +1217,13 @@ var IgeObject = IgeEventingClass.extend({
 	 * are drawn over lower depths). Please note that entities are first sorted
 	 * by their layer and then by their depth, and only entities of the same layer will be
 	 * sorted against each other by their depth values.
-	 * #Set an entity's depth to 1
+	 * ##Set an entity's depth to 1
 	 *     var entity = new IgeEntity()
 	 *         .depth(1);
-	 * #Get an entity's depth value
+	 * ##Get an entity's depth value
 	 *     var entity = new IgeEntity()
 	 *     console.log(entity.depth());
-	 * #How layers and depths are handled together
+	 * ##How layers and depths are handled together
 	 *     var entity1 = new IgeEntity(),
 	 *         entity2 = new IgeEntity(),
 	 *         entity3 = new IgeEntity();
@@ -1326,13 +1326,13 @@ var IgeObject = IgeEventingClass.extend({
 	 * as set by calling isometricMounts(true). If the mount mode is
 	 * 2d, the depth sorter will use a very fast 2d depth sort that
 	 * does not use 3d bounds at all.
-	 * #Turn off all depth sorting for this object's children
+	 * ##Turn off all depth sorting for this object's children
 	 *     entity.depthSortMode(-1);
-	 * #Use 3d bounds when sorting this object's children
+	 * ##Use 3d bounds when sorting this object's children
 	 *     entity.depthSortMode(0);
-	 * #Use 3d bounds optimised for mostly cube-shaped bounds when sorting this object's children
+	 * ##Use 3d bounds optimised for mostly cube-shaped bounds when sorting this object's children
 	 *     entity.depthSortMode(1);
-	 * #Use 3d bounds optimised for all cube-shaped bounds when sorting this object's children
+	 * ##Use 3d bounds optimised for all cube-shaped bounds when sorting this object's children
 	 *     entity.depthSortMode(2);
      * @param {Number=} val The mode to use when depth sorting
      * this object's children, given as an integer value.

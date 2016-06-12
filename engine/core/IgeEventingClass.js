@@ -9,10 +9,10 @@ var IgeEventingClass = IgeClass.extend({
 
 	/**
 	 * Add an event listener method for an event.
-     * #Add an Event Listener
+     * ##Add an Event Listener
      *     // Register event lister and store in "evt"
      *     var evt = myEntity.on('mouseDown', function () { console.log('down'); });
-     * #Listen for Event Data
+     * ##Listen for Event Data
      *     // Set a listener to listen for the data (multiple values emitted
      *     // from an event are passed as function arguments)
      *     myEntity.on('hello', function (arg1, arg2) {
@@ -122,7 +122,7 @@ var IgeEventingClass = IgeClass.extend({
 	 * then the removal will be placed in the removals array to be
 	 * processed after the event loop has completed in the emit()
 	 * method.
-     * #Switch off an Event Listener
+     * ##Switch off an Event Listener
      *     // Register event lister and store in "evt"
      *     var evt = myEntity.on('mouseDown', function () { console.log('down'); });
      *
@@ -181,16 +181,16 @@ var IgeEventingClass = IgeClass.extend({
 
 	/**
 	 * Emit an event by name.
-     * #Emit an Event
+     * ##Emit an Event
      *     // Emit the event named "hello"
      *     myEntity.emit('hello');
-     * #Emit an Event With Data Object
+     * ##Emit an Event With Data Object
      *     // Emit the event named "hello"
      *     myEntity.emit('hello', {moo: true});
-     * #Emit an Event With Multiple Data Values
+     * ##Emit an Event With Multiple Data Values
      *     // Emit the event named "hello"
      *     myEntity.emit('hello', [{moo: true}, 'someString']);
-     * #Listen for Event Data
+     * ##Listen for Event Data
      *     // Set a listener to listen for the data (multiple values emitted
      *     // from an event are passed as function arguments)
      *     myEntity.on('hello', function (arg1, arg2) {
