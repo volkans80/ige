@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>The source code</title>
+  <link href="../resources/prettify/prettify.css" type="text/css" rel="stylesheet" />
+  <script type="text/javascript" src="../resources/prettify/prettify.js"></script>
+  <style type="text/css">
+    .highlight { display: block; background-color: #ddd; }
+  </style>
+  <script type="text/javascript">
+    function highlight() {
+      document.getElementById(location.hash.replace(/#/, "")).className = "highlight";
+    }
+  </script>
+</head>
+<body onload="prettyPrint(); highlight();">
+  <pre class="prettyprint lang-js"><span id='Core-IgePathNode'>/**
+</span> * Creates a new path node for use with the IgePathFinder class.
+ * @class Core.IgePathNode
+ * @alternateClassName IgePathNode
+ * @extends IgePoint3d
+ */
+var IgePathNode = IgePoint3d.extend({
+	classId: 'IgePathNode',
+
+<span id='Core-IgePathNode-method-constructor'>	/**
+</span>	 * @constructor
+	 * @param {Number} x
+	 * @param {Number} y
+	 * @param {Number} g
+	 * @param {Number} moveCost
+	 * @param {Number} h
+	 * @param {Object} parent
+	 * @param {String} direction
+	 */
+	init: function(x, y, g, moveCost, h, parent, direction) {
+		this.z = 0; // Compat with IgePoint3d
+		
+		this.x = x;
+		this.y = y;
+		this.g = g + moveCost; // Cost of moving from the start point along the path to this node (parentNode.g + moveCost)
+		this.h = h; // Rough distance to target node
+		this.moveCost = moveCost;
+		this.f = g + h; // Result of g + h
+		this.link = parent;
+		this.hash = x + ',' + y;
+		this.listType = 0;
+		this.direction = direction;
+		this.mode = 0;
+	},
+
+<span id='Core-IgePathNode-method-mode'>	/**
+</span>	 * Gets / sets the path node mode. The mode determines if the co-ordinates
+	 * will be in tile or absolute co-ordinates.
+	 * @param {Number=} val 0 = tile based, 1 = absolute based.
+	 * @return {*}
+	 */
+	mode: function (val) {
+		if (val !== undefined) {
+			this.mode = val;
+			return this;
+		}
+		
+		return this.mode;
+	}
+});
+
+if (typeof(module) !== 'undefined' &amp;&amp; typeof(module.exports) !== 'undefined') { module.exports = IgePathNode; }</pre>
+</body>
+</html>

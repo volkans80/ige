@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>The source code</title>
+  <link href="../resources/prettify/prettify.css" type="text/css" rel="stylesheet" />
+  <script type="text/javascript" src="../resources/prettify/prettify.js"></script>
+  <style type="text/css">
+    .highlight { display: block; background-color: #ddd; }
+  </style>
+  <script type="text/javascript">
+    function highlight() {
+      document.getElementById(location.hash.replace(/#/, "")).className = "highlight";
+    }
+  </script>
+</head>
+<body onload="prettyPrint(); highlight();">
+  <pre class="prettyprint lang-js"><span id='Core-IgeFilters-method-sharpen'>/**
+</span> * @member Core.IgeFilters
+ * @param canvas
+ * @param ctx
+ * @param originalImage
+ * @param texture
+ * @param data
+ */
+IgeFilters.sharpen = function (canvas, ctx, originalImage, texture, data) {
+	var strength = 1,
+		loop;
+
+	if (data &amp;&amp; data.value) {
+		strength = data.value;
+	}
+
+	for (loop = 0; loop &lt; strength; loop++) {
+		// Apply the filter and then put the new pixel data
+		ctx.putImageData(
+			IgeFilters._convolute(
+				ctx.getImageData(
+					0,
+					0,
+					canvas.width,
+					canvas.height
+				),
+				[  0, -1,  0,
+					-1,  5, -1,
+					0, -1,  0 ]
+			),
+			0,
+			0
+		);
+	}
+};</pre>
+</body>
+</html>

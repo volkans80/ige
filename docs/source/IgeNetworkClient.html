@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>The source code</title>
+  <link href="../resources/prettify/prettify.css" type="text/css" rel="stylesheet" />
+  <script type="text/javascript" src="../resources/prettify/prettify.js"></script>
+  <style type="text/css">
+    .highlight { display: block; background-color: #ddd; }
+  </style>
+  <script type="text/javascript">
+    function highlight() {
+      document.getElementById(location.hash.replace(/#/, "")).className = "highlight";
+    }
+  </script>
+</head>
+<body onload="prettyPrint(); highlight();">
+  <pre class="prettyprint lang-js"><span id='Components-Network-IgeNetworkClient'>/**
+</span> * There is no description yet
+ * @class Components.Network.IgeNetworkClient
+ * @alternateClassName IgeNetworkClient
+ * @extends IgeClass
+ */
+var IgeNetworkClient = IgeClass.extend({
+	classId: 'IgeNetworkClient',
+
+	init: function (socket) {
+		this._socket = socket;
+		this._id = socket.id;
+
+		this._timeDiff = 0;
+		this._streamDataCache = {};
+		this._streamReady = false;
+	},
+
+<span id='Components-Network-IgeNetworkClient-method-disconnect'>	/**
+</span>	 * Disconnects this client and destroys the
+	 * client object.
+	 */
+	disconnect: function () {
+		this._socket.disconnect();
+		this.destroy();
+	},
+
+	destroy: function () {
+		delete this._socket;
+		delete this._streamDataCache;
+	}
+});</pre>
+</body>
+</html>
